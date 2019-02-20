@@ -37,6 +37,7 @@ import shared.FixedIterationTrainer;
  * @author kmandal
  * @version 1.0
  */
+// test change
 public class MaxKColoringTest {
     /** The n value */
     private static final int N = 50; // number of vertices
