@@ -20,7 +20,7 @@ import java.text.*;
  * @author Hannah Lau
  * @version 1.0
  */
-public class AbaloneTest {
+public class CarTest {
     private static Instance[] instances = initializeInstances();
 
     private static int inputLayer = 7, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
@@ -52,7 +52,7 @@ public class AbaloneTest {
 
         for(int i = 0; i < oa.length; i++) {
             double start = System.nanoTime(), end, trainingTime, testingTime, correct = 0, incorrect = 0;
-            train(oa[i], networks[i], oaNames[i]); //trainer.train();
+            train(oa[i], networks[i], oaNames[i]);
             end = System.nanoTime();
             trainingTime = end - start;
             trainingTime /= Math.pow(10,9);
@@ -100,28 +100,28 @@ public class AbaloneTest {
                 example.setLabel(new Instance(Double.parseDouble(network.getOutputValues().toString())));
                 error += measure.value(output, example);
             }
-
-            System.out.println(df.format(error));
+//            System.out.println(df.format(error));
         }
     }
 
     private static Instance[] initializeInstances() {
 
-        double[][][] attributes = new double[4177][][];
+        double[][][] attributes = new double[1727][][];
 
         try {
-        	URL path = AbaloneTest.class.getResource("abalone.txt");
+        	
+        	URL path = CarTest.class.getResource("car_processed.csv");
             BufferedReader br = new BufferedReader(new FileReader(new File(path.getFile())));
-
+            
             for(int i = 0; i < attributes.length; i++) {
                 Scanner scan = new Scanner(br.readLine());
                 scan.useDelimiter(",");
 
                 attributes[i] = new double[2][];
-                attributes[i][0] = new double[7]; // 7 attributes
+                attributes[i][0] = new double[6]; // 6 attributes
                 attributes[i][1] = new double[1];
 
-                for(int j = 0; j < 7; j++)
+                for(int j = 0; j < 6; j++)
                     attributes[i][0][j] = Double.parseDouble(scan.next());
 
                 attributes[i][1][0] = Double.parseDouble(scan.next());
@@ -135,8 +135,8 @@ public class AbaloneTest {
 
         for(int i = 0; i < instances.length; i++) {
             instances[i] = new Instance(attributes[i][0]);
-            // classifications range from 0 to 30; split into 0 - 14 and 15 - 30
-            instances[i].setLabel(new Instance(attributes[i][1][0] < 15 ? 0 : 1));
+            // classifications range from 1 to 4; split into 4 labels
+            instances[i].setLabel(new Instance(attributes[i][1][0]));
         }
 
         return instances;
