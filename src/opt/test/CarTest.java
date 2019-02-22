@@ -61,6 +61,9 @@ public class CarTest {
             networks[i].setWeights(optimalInstance.getData());
 
             double predicted, actual;
+            double tp = 0.0, tn = 0.0, fp = 0.0, fn = 0.0;
+            double accuracy = 0.0, precision = 0.0, recall = 0.0, f1 = 0.0;
+            
             start = System.nanoTime();
             for(int j = 0; j < instances.length; j++) {
                 networks[i].setInputValues(instances[j].getData());
@@ -68,9 +71,41 @@ public class CarTest {
 
                 predicted = Double.parseDouble(instances[j].getLabel().toString());
                 actual = Double.parseDouble(networks[i].getOutputValues().toString());
-
-                double trash = Math.abs(predicted - actual) < 0.5 ? correct++ : incorrect++;
-
+                
+                // calculate F1 score - code by PHPCoderBlog 
+                // at (https://phpcoderblog.wordpress.com/2017/11/02/how-to-calculate-accuracy-precision-recall-and-f1-score-deep-learning-precision-recall-f-score-calculating-precision-recall-python-precision-recall-scikit-precision-recall-ml-metrics-to-use-bi/)
+                
+                double trash = Math.abs(predicted - actual) < 0.5 ? correct++ : incorrect++;   
+                // if predicted == 1
+                if (Math.abs(predicted - 1) < 0.5) 
+                {
+                    if (Math.abs(predicted - actual) < 0.5)
+                    {
+                    	tp++;
+                    } else {
+                    	fp++;
+                    }
+                }
+                // if predicted == 0
+                else {
+                    if (Math.abs(predicted - actual) < 0.5)
+                    {
+                    	tn++;
+                    } else {
+                    	fn++;
+                    }
+                }
+                
+                // a ratio of correctly predicted observation to the total observations
+                accuracy = (tp + tn)/(tp + tn + fp + fn);
+             
+                // precision is "how useful the search results are"
+                precision = tp / (tp + fp);
+                
+                // recall is "how complete the results are"
+                recall = tp / (tp + fn);
+             
+                f1 = 2 / ((1 / precision) + (1 / recall));
             }
             end = System.nanoTime();
             testingTime = end - start;
@@ -79,14 +114,15 @@ public class CarTest {
             results +=  "\nResults for " + oaNames[i] + ": \nCorrectly classified " + correct + " instances." +
                         "\nIncorrectly classified " + incorrect + " instances.\nPercent correctly classified: "
                         + df.format(correct/(correct+incorrect)*100) + "%\nTraining time: " + df.format(trainingTime)
-                        + " seconds\nTesting time: " + df.format(testingTime) + " seconds\n";
-        }
+                        + " seconds\nTesting time: " + df.format(testingTime) + " seconds. The accuracy is " + accuracy +
+                        " ,the precision is " + precision + " the recall is " + recall + " and the F1 measure is " + f1 + ".\n";
+        } 
 
         System.out.println(results);
     }
 
     private static void train(OptimizationAlgorithm oa, BackPropagationNetwork network, String oaName) {
-        System.out.println("\nError results for " + oaName + "\n---------------------------");
+        System.out.println("\nWorking through algorithm " + oaName + "\n---------------------------");
 
         for(int i = 0; i < trainingIterations; i++) {
             oa.train();
