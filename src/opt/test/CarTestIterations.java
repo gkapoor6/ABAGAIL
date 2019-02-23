@@ -19,10 +19,15 @@ import java.text.*;
  * @author Hannah Lau, Geetika Kapoor
  * @version 1.1
  */
-public class CarTest {
+public class CarTestIterations {
     private static Instance[] instances = initializeInstances();
 
-    private static int inputLayer = 7, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
+    private static int inputLayer = 7, hiddenLayer = 5, outputLayer = 1;
+    private static int trainingIterations;
+    
+    private static double t,cooling;
+    private static int popSize, toMate, toMutate;
+    
     private static BackPropagationNetworkFactory factory = new BackPropagationNetworkFactory();
     
     private static ErrorMeasure measure = new SumOfSquaresError();
@@ -38,7 +43,18 @@ public class CarTest {
 
     private static DecimalFormat df = new DecimalFormat("0.000");
 
-    public static void main(String[] args) {
+    // Constructor
+    public CarTestIterations(int trainingIterations, double t, double cooling, int popSize, int toMate, int toMutate) {
+    	
+    	CarTestIterations.trainingIterations = trainingIterations;
+    	CarTestIterations.t = t;
+    	CarTestIterations.cooling = cooling;
+    	CarTestIterations.popSize = popSize;
+    	CarTestIterations.toMate = toMate;
+    	CarTestIterations.toMutate = toMutate;
+    }
+    
+    public void run() {
         for(int i = 0; i < oa.length; i++) {
             networks[i] = factory.createClassificationNetwork(
                 new int[] {inputLayer, hiddenLayer, outputLayer});
@@ -46,8 +62,9 @@ public class CarTest {
         }
 
         oa[0] = new RandomizedHillClimbing(nnop[0]);
-        oa[1] = new SimulatedAnnealing(1E11, .95, nnop[1]);
-        oa[2] = new StandardGeneticAlgorithm(200, 100, 10, nnop[2]);
+        oa[1] = new SimulatedAnnealing(CarTestIterations.t, CarTestIterations.cooling, nnop[1]);
+        oa[2] = new StandardGeneticAlgorithm(CarTestIterations.popSize, CarTestIterations.toMate,
+        		CarTestIterations.toMutate, nnop[2]);
 
         for(int i = 0; i < oa.length; i++) {
         	
@@ -116,30 +133,40 @@ public class CarTest {
             results +=  "\nResults for " + oaNames[i] + ": \nCorrectly classified " + correct + " instances." +
                         "\nIncorrectly classified " + incorrect + " instances.\nPercent correctly classified: "
                         + df.format(correct/(correct+incorrect)*100) + "%\nTraining time: " + df.format(trainingTime)
-                        + " seconds\nTesting time: " + df.format(testingTime) + " seconds. The accuracy is " + accuracy +
-                        " ,the precision is " + precision + " the recall is " + recall + " and the F1 measure is " + f1 + ".\n";
+                        + " seconds\nTesting time: " + df.format(testingTime) + " seconds. The F1 measure is " + f1 + ".\n";
+
         } 
 
         System.out.println(results);
     }
 
     private static void train(OptimizationAlgorithm oa, BackPropagationNetwork network, String oaName) {
-        System.out.println("\nWorking through algorithm " + oaName + "---------------------------");
+        System.out.println("\nWorking through algorithm " + oaName);      
 
+    	System.out.println("\nNumber of training iterations: " + trainingIterations);
+    	double trainingError = 0.0;
+        	
+    	// EVERY ITERATION
         for(int i = 0; i < trainingIterations; i++) {
-            oa.train();
-
+            oa.train();           
             double error = 0;
+            
+            // EVERY INSTANCE
             for(int j = 0; j < instances.length; j++) {
                 network.setInputValues(instances[j].getData());
                 network.run();
 
                 Instance output = instances[j].getLabel(), example = new Instance(network.getOutputValues());
                 example.setLabel(new Instance(Double.parseDouble(network.getOutputValues().toString())));
-                error += measure.value(output, example);
+                // adds error for each instance in the training iteration
+                error += measure.value(output, example); 
             }
-//            System.out.println(df.format(error));
+            
+            // adds error for each training iteration
+            trainingError += error/instances.length;
         }
+        
+        System.out.println("\nTraining error: " + df.format(trainingError/trainingIterations));
     }
 
     private static Instance[] initializeInstances() {

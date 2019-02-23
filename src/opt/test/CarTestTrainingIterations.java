@@ -19,10 +19,11 @@ import java.text.*;
  * @author Hannah Lau, Geetika Kapoor
  * @version 1.1
  */
-public class CarTest {
+public class CarTestTrainingIterations {
     private static Instance[] instances = initializeInstances();
 
-    private static int inputLayer = 7, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
+    private static int inputLayer = 7, hiddenLayer = 5, outputLayer = 1;
+    private static int[] trainingIterations = new int[]{1, 20, 50, 100, 500, 1000, 1500, 2000};
     private static BackPropagationNetworkFactory factory = new BackPropagationNetworkFactory();
     
     private static ErrorMeasure measure = new SumOfSquaresError();
@@ -124,21 +125,38 @@ public class CarTest {
     }
 
     private static void train(OptimizationAlgorithm oa, BackPropagationNetwork network, String oaName) {
-        System.out.println("\nWorking through algorithm " + oaName + "---------------------------");
+        System.out.println("\nWorking through algorithm " + oaName);
+        
+        double[] trainingErrors = new double[]{0, 0, 0, 0, 0, 0, 0, 0};
+        
+        // EVERY HYPERPARAMETER TRAINING TEST       
+        for (int m = 0; m < trainingIterations.length; m++) {
+        	
+        	System.out.println("\nNumber of training iterations: " + trainingIterations[m]);
+        	double trainingError = 0.0;
+        	
+        	// EVERY ITERATION
+            for(int i = 0; i < trainingIterations[m]; i++) {
+                oa.train();           
+                double error = 0;
+                
+                // EVERY INSTANCE
+                for(int j = 0; j < instances.length; j++) {
+                    network.setInputValues(instances[j].getData());
+                    network.run();
 
-        for(int i = 0; i < trainingIterations; i++) {
-            oa.train();
-
-            double error = 0;
-            for(int j = 0; j < instances.length; j++) {
-                network.setInputValues(instances[j].getData());
-                network.run();
-
-                Instance output = instances[j].getLabel(), example = new Instance(network.getOutputValues());
-                example.setLabel(new Instance(Double.parseDouble(network.getOutputValues().toString())));
-                error += measure.value(output, example);
+                    Instance output = instances[j].getLabel(), example = new Instance(network.getOutputValues());
+                    example.setLabel(new Instance(Double.parseDouble(network.getOutputValues().toString())));
+                    // adds error for each instance in the training iteration
+                    error += measure.value(output, example); 
+                }
+                
+                // adds error for each training iteration
+                trainingError += error/instances.length;
             }
-//            System.out.println(df.format(error));
+            
+            trainingErrors[m] = trainingError/trainingIterations[m];
+            System.out.println("\nTraining error: " + df.format(trainingErrors[m]));
         }
     }
 
