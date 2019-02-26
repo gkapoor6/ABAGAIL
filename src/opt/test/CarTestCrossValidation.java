@@ -99,8 +99,8 @@ public class CarTestCrossValidation {
 	    NeuralNetworkOptimizationProblem[] nnops = new NeuralNetworkOptimizationProblem[K];
 	    OptimizationAlgorithm[] oas = new OptimizationAlgorithm[K];
 
-	    double[] validationErrors = new double[nets.length];
-	    double[] trainErrors = new double[nets.length];
+	    double[] validationf1s = new double[nets.length];
+	    double[] trainf1s = new double[nets.length];
 
 	    double starttime = System.nanoTime();;
 	    double endtime;
@@ -122,30 +122,30 @@ public class CarTestCrossValidation {
 	      train(oas[i], nets[i], trainingIterations);
 
 
-	      validationErrors[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tError: %f%%%n", i+1, validationErrors[i] * 100);
-	      trainErrors[i] = evaluateNetwork(backpropNet, trainFolds);
+	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
+	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
+	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
 	    }
 
 
 	    int best_index = -1;
-	    double min = Double.MAX_VALUE;
-	    for (int j = 0; j < validationErrors.length; j++) {
-	      if (validationErrors[j] < min) {
+	    double max = 0.0;
+	    for (int j = 0; j < validationf1s.length; j++) {
+	      if (validationf1s[j] > max) {
 	        best_index = j;
-	        min = validationErrors[j];
+	        max = validationf1s[j];
 	      }
 	    }
 
 	    BackPropagationNetwork bestNet = nets[best_index];
-	    double validationError = validationErrors[best_index];
-	    double trainError = trainErrors[best_index];
-	    double testError = evaluateNetwork(bestNet, testSet.getInstances());
+	    double validationf1 = validationf1s[best_index];
+	    double trainf1 = trainf1s[best_index];
+	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
 
 
-	    System.out.printf("%nMin Validation Error: %f%% %n", validationError * 100);
-	    System.out.printf("Training Error: %f%% %n", trainError * 100);
-	    System.out.printf("Test Error: %f%% %n", testError * 100);
+	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
+	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
+	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
 
 	    endtime = System.nanoTime();
 	    double time_elapsed = endtime - starttime;
@@ -171,8 +171,8 @@ public class CarTestCrossValidation {
 	    NeuralNetworkOptimizationProblem[] nnops = new NeuralNetworkOptimizationProblem[K];
 	    OptimizationAlgorithm[] oas = new OptimizationAlgorithm[K];
 
-	    double[] validationErrors = new double[nets.length];
-	    double[] trainErrors = new double[nets.length];
+	    double[] validationf1s = new double[nets.length];
+	    double[] trainf1s = new double[nets.length];
 
 	    double starttime = System.nanoTime();;
 	    double endtime;
@@ -193,30 +193,30 @@ public class CarTestCrossValidation {
 //	      TODO: Vary the number of iterations as needed for your results
 	      train(oas[i], nets[i], trainingIterations);
 
-	      validationErrors[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tError: %f%%%n", i+1, validationErrors[i] * 100);
-	      trainErrors[i] = evaluateNetwork(backpropNet, trainFolds);
+	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
+	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
+	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
 	    }
 
 
 	    int best_index = -1;
-	    double min = Double.MAX_VALUE;
-	    for (int j = 0; j < validationErrors.length; j++) {
-	      if (validationErrors[j] < min) {
+	    double max = 0.0;
+	    for (int j = 0; j < validationf1s.length; j++) {
+	      if (validationf1s[j] > max) {
 	        best_index = j;
-	        min = validationErrors[j];
+	        max = validationf1s[j];
 	      }
 	    }
 
 	    BackPropagationNetwork bestNet = nets[best_index];
-	    double validationError = validationErrors[best_index];
-	    double trainError = trainErrors[best_index];
-	    double testError = evaluateNetwork(bestNet, testSet.getInstances());
+	    double validationf1 = validationf1s[best_index];
+	    double trainf1 = trainf1s[best_index];
+	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
 
 
-	    System.out.printf("%nMin Validation Error: %f%% %n", validationError * 100);
-	    System.out.printf("Training Error: %f%% %n", trainError * 100);
-	    System.out.printf("Test Error: %f%% %n", testError * 100);
+	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
+	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
+	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
 
 	    endtime = System.nanoTime();
 	    double time_elapsed = endtime - starttime;
@@ -242,8 +242,8 @@ public class CarTestCrossValidation {
 	    NeuralNetworkOptimizationProblem[] nnops = new NeuralNetworkOptimizationProblem[K];
 	    OptimizationAlgorithm[] oas = new OptimizationAlgorithm[K];
 
-	    double[] validationErrors = new double[nets.length];
-	    double[] trainErrors = new double[nets.length];
+	    double[] validationf1s = new double[nets.length];
+	    double[] trainf1s = new double[nets.length];
 
 	    double starttime = System.nanoTime();;
 	    double endtime;
@@ -264,30 +264,30 @@ public class CarTestCrossValidation {
 //	      TODO: Vary the number of iterations as needed for your results
 	      train(oas[i], nets[i], trainingIterations);
 
-	      validationErrors[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tError: %f%%%n", i+1, validationErrors[i] * 100);
-	      trainErrors[i] = evaluateNetwork(backpropNet, trainFolds);
+	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
+	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
+	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
 	    }
 
 
 	    int best_index = -1;
-	    double min = Double.MAX_VALUE;
-	    for (int j = 0; j < validationErrors.length; j++) {
-	      if (validationErrors[j] < min) {
+	    double max = 0.0;
+	    for (int j = 0; j < validationf1s.length; j++) {
+	      if (validationf1s[j] > max) {
 	        best_index = j;
-	        min = validationErrors[j];
+	        max = validationf1s[j];
 	      }
 	    }
 
 	    BackPropagationNetwork bestNet = nets[best_index];
-	    double validationError = validationErrors[best_index];
-	    double trainError = trainErrors[best_index];
-	    double testError = evaluateNetwork(bestNet, testSet.getInstances());
+	    double validationf1 = validationf1s[best_index];
+	    double trainf1 = trainf1s[best_index];
+	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
 
 
-	    System.out.printf("%nMin Validation Error: %f%% %n", validationError * 100);
-	    System.out.printf("Training Error: %f%% %n", trainError * 100);
-	    System.out.printf("Test Error: %f%% %n", testError * 100);
+	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
+	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
+	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
 
 	    endtime = System.nanoTime();
 	    double time_elapsed = endtime - starttime;
@@ -301,16 +301,16 @@ public class CarTestCrossValidation {
 	  /**
 	   * This method will run Backpropagation using each
 	   * combination of (K-1) folds for training, and the Kth fold for validation. Once the model
-	   * with the lowest validation set error is found, that is used as the "best" model and the
-	   * training and test errors on that model are recorded.
+	   * with the lowest validation set f1 is found, that is used as the "best" model and the
+	   * training and test f1s on that model are recorded.
 	   */
 	  public static void runBackprop() {
 
 	    System.out.println("===========Backprop=========");
 
 	    BackPropagationNetwork[] nets = new BackPropagationNetwork[K];
-	    double[] validationErrors = new double[nets.length];
-	    double[] trainErrors = new double[nets.length];
+	    double[] validationf1s = new double[nets.length];
+	    double[] trainf1s = new double[nets.length];
 
 	    double starttime = System.nanoTime();;
 	    double endtime;
@@ -333,31 +333,31 @@ public class CarTestCrossValidation {
 
 	      trainer.train();
 
-	      validationErrors[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tError: %f%%%n", i+1, validationErrors[i] * 100);
-	      trainErrors[i] = evaluateNetwork(backpropNet, trainFolds);
+	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
+	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
+	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
 	    }
 
 	    int best_index = -1;
-	    double min = Double.MAX_VALUE;
-	    for (int j = 0; j < validationErrors.length; j++) {
-	      if (validationErrors[j] < min) {
+	    double max = 0.0;
+	    for (int j = 0; j < validationf1s.length; j++) {
+	      if (validationf1s[j] > max) {
 	        best_index = j;
-	        min = validationErrors[j];
+	        max = validationf1s[j];
 	      }
 	    }
 
 	    BackPropagationNetwork bestNet = nets[best_index];
-	    double validationError = validationErrors[best_index];
-	    double trainError = trainErrors[best_index];
-	    double testError = evaluateNetwork(bestNet, testSet.getInstances());
+	    double validationf1 = validationf1s[best_index];
+	    double trainf1 = trainf1s[best_index];
+	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
 
 
 	    System.out.println("\nConvergence in " + trainingIterations + " iterations");
 
-	    System.out.printf("%nMin Validation Error: %f%% %n", validationError * 100);
-	    System.out.printf("Training Error: %f%% %n", trainError * 100);
-	    System.out.printf("Test Error: %f%% %n", testError * 100);
+	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
+	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
+	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
 
 	    endtime = System.nanoTime();
 	    double time_elapsed = endtime - starttime;
@@ -389,34 +389,59 @@ public class CarTestCrossValidation {
 
 	  /**
 	   * Given a network and instances, the output of the network is evaluated and a decimal value
-	   * for error is given
+	   * for f1 is given
 	   * @param network the BackPropagationNetwork with weights already initialized
 	   * @param data the instances to be evaluated against
 	   * @return
 	   */
 	  public static double evaluateNetwork(BackPropagationNetwork network, Instance[] data) {
-
-	    double num_incorrect = 0;
-	    double error = 0;
-
+		// Output the F1 score
+        double tp = 0.0, tn = 0.0, fp = 0.0, fn = 0.0;
+        double accuracy = 0.0, precision = 0.0, recall = 0.0, f1 = 0.0;
+        
 	    for (int j = 0; j < data.length; j++) {
+	    	
 	      network.setInputValues(data[j].getData());
 	      network.run();
 
-	      Vector actual = data[j].getLabel().getData();
-	      Vector predicted = network.getOutputValues();
+          double actual = data[j].getLabel().getData().get(data[j].getLabel().getData().argMax());
+	      double predicted = network.getOutputValues().get(network.getOutputValues().argMax());
 
-
-	      boolean mismatch = ! isEqualOutputs(actual, predicted);
-
-	      if (mismatch) {
-	        num_incorrect += 1;
-	      }
-
+          // calculate F1 score - code by PHPCoderBlog 
+          // at (https://phpcoderblog.wordpress.com/2017/11/02/how-to-calculate-accuracy-precision-recall-and-f1-score-deep-learning-precision-recall-f-score-calculating-precision-recall-python-precision-recall-scikit-precision-recall-ml-metrics-to-use-bi/)
+          
+          // if predicted == 1
+          if (Math.abs(predicted - 1) < 0.5) 
+          {
+              if (Math.abs(actual - predicted) < 0.5)
+              {
+              	tp++;
+              } else {
+              	fp++;
+              }
+          }
+          // if predicted == 0
+          else {
+              if (Math.abs(actual - predicted) < 0.5)
+              {
+              	tn++;
+              } else {
+              	fn++;
+              }
+          }
+          
 	    }
-
-	    error = num_incorrect / data.length;
-	    return error;
+        // a ratio of correctly predicted observation to the total observations
+        accuracy = (tp + tn)/(tp + tn + fp + fn);
+     
+        // precision is "how useful the search results are"
+        precision = tp / (tp + fp);
+        
+        // recall is "how complete the results are"
+        recall = tp / (tp + fn);
+     
+        f1 = 2 / ((1 / precision) + (1 / recall));
+	    return f1;
 
 	  }
 
@@ -550,7 +575,7 @@ public class CarTestCrossValidation {
 	  /**
 	   * Takes all instances, and randomly orders them. Then, the first PERCENT_TRAIN percentage of
 	   * instances form the trainSet DataSet, and the remaining (1 - PERCENT_TRAIN) percentage of
-	   * instances form the testSet DataSet.
+	   * instances frm the testSet DataSet.
 	   */
 	  public static void makeTestTrainSets() {
 
