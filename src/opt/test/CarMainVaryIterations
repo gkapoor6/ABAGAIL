@@ -1,0 +1,383 @@
+===========Backprop=========
+Fold: 1	f1: 64.406780%
+Fold: 2	f1: 99.581590%
+Fold: 3	f1: 66.666667%
+Fold: 4	f1: 82.352941%
+Fold: 5	f1: 99.581590%
+Fold: 6	f1: 100.000000%
+Fold: 7	f1: 95.196507%
+Fold: 8	f1: 91.402715%
+Fold: 9	f1: 100.000000%
+Fold: 10	f1: 94.690265%
+
+Convergence in 1 iterations
+
+Max Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 0.230 s 
+===========Randomized Hill Climbing=========
+Fold: 1	f1: 16.793893%
+Fold: 2	f1: NaN%
+Fold: 3	f1: NaN%
+Fold: 4	f1: 11.023622%
+Fold: 5	f1: 8.000000%
+Fold: 6	f1: 80.000000%
+Fold: 7	f1: NaN%
+Fold: 8	f1: 78.172589%
+Fold: 9	f1: 6.451613%
+Fold: 10	f1: 8.064516%
+
+Max Validation f1: 80.000000% 
+Training f1: 77.872100% 
+Test f1: 78.102926% 
+Time Elapsed: 0.082 s 
+===========Simulated Annealing=========
+Fold: 1	f1: 26.086957%
+Fold: 2	f1: 3.278689%
+Fold: 3	f1: 8.000000%
+Fold: 4	f1: 4.878049%
+Fold: 5	f1: 3.278689%
+Fold: 6	f1: 6.451613%
+Fold: 7	f1: NaN%
+Fold: 8	f1: 13.953488%
+Fold: 9	f1: 90.909091%
+Fold: 10	f1: 97.854077%
+
+Max Validation f1: 97.854077% 
+Training f1: 97.338403% 
+Test f1: 97.366185% 
+Time Elapsed: 0.068 s 
+===========Genetic Algorithms=========
+Fold: 1	f1: 99.581590%
+Fold: 2	f1: 98.734177%
+Fold: 3	f1: 93.333333%
+Fold: 4	f1: 89.400922%
+Fold: 5	f1: 100.000000%
+Fold: 6	f1: 100.000000%
+Fold: 7	f1: 100.000000%
+Fold: 8	f1: 100.000000%
+Fold: 9	f1: 95.196507%
+Fold: 10	f1: 77.948718%
+
+Max Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 4.067 s 
+===========Backprop=========
+Fold: 1	f1: 97.872340%
+Fold: 2	f1: 91.402715%
+Fold: 3	f1: 82.926829%
+Fold: 4	f1: 85.714286%
+Fold: 5	f1: 89.908257%
+Fold: 6	f1: 94.273128%
+Fold: 7	f1: 97.872340%
+Fold: 8	f1: 85.714286%
+Fold: 9	f1: 96.103896%
+Fold: 10	f1: 93.750000%
+
+Convergence in 20 iterations
+
+Max Validation f1: 97.872340% 
+Training f1: 98.685446% 
+Test f1: 98.615191% 
+Time Elapsed: 0.494 s 
+===========Randomized Hill Climbing=========
+Fold: 1	f1: NaN%
+Fold: 2	f1: 71.657754%
+Fold: 3	f1: 24.817518%
+Fold: 4	f1: 9.523810%
+Fold: 5	f1: 23.529412%
+Fold: 6	f1: NaN%
+Fold: 7	f1: 22.222222%
+Fold: 8	f1: 34.482759%
+Fold: 9	f1: 46.153846%
+Fold: 10	f1: 86.124402%
+
+Max Validation f1: 86.124402% 
+Training f1: 90.522048% 
+Test f1: 90.081893% 
+Time Elapsed: 0.292 s 
+===========Simulated Annealing=========
+Fold: 1	f1: 11.023622%
+Fold: 2	f1: 40.000000%
+Fold: 3	f1: 26.086957%
+Fold: 4	f1: 45.161290%
+Fold: 5	f1: 81.773399%
+Fold: 6	f1: NaN%
+Fold: 7	f1: 55.421687%
+Fold: 8	f1: 83.495146%
+Fold: 9	f1: 92.376682%
+Fold: 10	f1: 35.862069%
+
+Max Validation f1: 92.376682% 
+Training f1: 89.954105% 
+Test f1: 90.231713% 
+Time Elapsed: 0.281 s 
+===========Genetic Algorithms=========
+Fold: 1	f1: 100.000000%
+Fold: 2	f1: 92.857143%
+Fold: 3	f1: 99.581590%
+Fold: 4	f1: 100.000000%
+Fold: 5	f1: 97.872340%
+Fold: 6	f1: 97.435897%
+Fold: 7	f1: 99.159664%
+Fold: 8	f1: 100.000000%
+Fold: 9	f1: 100.000000%
+Fold: 10	f1: 68.508287%
+
+Max Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 27.408 s 
+===========Backprop=========
+Fold: 1	f1: 95.196507%
+Fold: 2	f1: 94.736842%
+Fold: 3	f1: 93.805310%
+Fold: 4	f1: 92.376682%
+Fold: 5	f1: 96.995708%
+Fold: 6	f1: 92.857143%
+Fold: 7	f1: 97.435897%
+Fold: 8	f1: 93.805310%
+Fold: 9	f1: 96.551724%
+Fold: 10	f1: 90.825688%
+
+Convergence in 50 iterations
+
+Max Validation f1: 97.435897% 
+Training f1: 95.242718% 
+Test f1: 95.456512% 
+Time Elapsed: 1.275 s 
+===========Randomized Hill Climbing=========
+Fold: 1	f1: 28.571429%
+Fold: 2	f1: 99.581590%
+Fold: 3	f1: 95.652174%
+Fold: 4	f1: 98.305085%
+Fold: 5	f1: NaN%
+Fold: 6	f1: 99.159664%
+Fold: 7	f1: 37.837838%
+Fold: 8	f1: 100.000000%
+Fold: 9	f1: 4.878049%
+Fold: 10	f1: 8.064516%
+
+Max Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 0.882 s 
+===========Simulated Annealing=========
+Fold: 1	f1: 57.142857%
+Fold: 2	f1: 99.159664%
+Fold: 3	f1: 96.551724%
+Fold: 4	f1: 100.000000%
+Fold: 5	f1: 80.597015%
+Fold: 6	f1: 1.652893%
+Fold: 7	f1: NaN%
+Fold: 8	f1: 100.000000%
+Fold: 9	f1: 62.068966%
+Fold: 10	f1: 53.086420%
+
+Max Validation f1: 100.000000% 
+Training f1: 99.860789% 
+Test f1: 99.875673% 
+Time Elapsed: 0.724 s 
+===========Genetic Algorithms=========
+Fold: 1	f1: 99.581590%
+Fold: 2	f1: 97.872340%
+Fold: 3	f1: 97.872340%
+Fold: 4	f1: 100.000000%
+Fold: 5	f1: 100.000000%
+Fold: 6	f1: 100.000000%
+Fold: 7	f1: 92.857143%
+Fold: 8	f1: 100.000000%
+Fold: 9	f1: 99.581590%
+Fold: 10	f1: 100.000000%
+
+Max Validation f1: 100.000000% 
+Training f1: 99.253035% 
+Test f1: 99.333333% 
+Time Elapsed: 64.393 s 
+===========Backprop=========
+Fold: 1	f1: 96.103896%
+Fold: 2	f1: 98.305085%
+Fold: 3	f1: 97.435897%
+Fold: 4	f1: 92.376682%
+Fold: 5	f1: 97.435897%
+Fold: 6	f1: 96.551724%
+Fold: 7	f1: 98.305085%
+Fold: 8	f1: 96.995708%
+Fold: 9	f1: 97.435897%
+Fold: 10	f1: 95.614035%
+
+Convergence in 100 iterations
+
+Max Validation f1: 98.305085% 
+Training f1: 97.821970% 
+Test f1: 97.886729% 
+Time Elapsed: 2.510 s 
+===========Randomized Hill Climbing=========
+Fold: 1	f1: 100.000000%
+Fold: 2	f1: 100.000000%
+Fold: 3	f1: 99.159664%
+Fold: 4	f1: 94.736842%
+Fold: 5	f1: 98.305085%
+Fold: 6	f1: 82.926829%
+Fold: 7	f1: 95.652174%
+Fold: 8	f1: 96.103896%
+Fold: 9	f1: 9.523810%
+Fold: 10	f1: 100.000000%
+
+Max Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 1.352 s 
+===========Simulated Annealing=========
+Fold: 1	f1: 70.967742%
+Fold: 2	f1: 96.103896%
+Fold: 3	f1: 94.736842%
+Fold: 4	f1: 52.760736%
+Fold: 5	f1: 88.372093%
+Fold: 6	f1: 23.529412%
+Fold: 7	f1: 93.333333%
+Fold: 8	f1: 24.817518%
+Fold: 9	f1: 65.921788%
+Fold: 10	f1: 72.043011%
+
+Max Validation f1: 96.103896% 
+Training f1: 96.696984% 
+Test f1: 96.575342% 
+Time Elapsed: 1.352 s 
+===========Genetic Algorithms=========
+Fold: 1	f1: 100.000000%
+Fold: 2	f1: 100.000000%
+Fold: 3	f1: 100.000000%
+Fold: 4	f1: 99.581590%
+Fold: 5	f1: 100.000000%
+Fold: 6	f1: 100.000000%
+Fold: 7	f1: 100.000000%
+Fold: 8	f1: 95.652174%
+Fold: 9	f1: 92.376682%
+Fold: 10	f1: 100.000000%
+
+Max Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 121.794 s 
+===========Backprop=========
+Fold: 1	f1: 100.000000%
+Fold: 2	f1: 100.000000%
+Fold: 3	f1: 99.159664%
+Fold: 4	f1: 99.159664%
+Fold: 5	f1: 100.000000%
+Fold: 6	f1: 100.000000%
+Fold: 7	f1: 100.000000%
+Fold: 8	f1: 99.159664%
+Fold: 9	f1: 99.159664%
+Fold: 10	f1: 100.000000%
+
+Convergence in 500 iterations
+
+Max Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 11.417 s 
+===========Randomized Hill Climbing=========
+Fold: 1	f1: 93.333333%
+Fold: 2	f1: 98.305085%
+Fold: 3	f1: 90.909091%
+Fold: 4	f1: 99.581590%
+Fold: 5	f1: 96.103896%
+Fold: 6	f1: 97.872340%
+Fold: 7	f1: 97.872340%
+Fold: 8	f1: 87.323944%
+Fold: 9	f1: 94.273128%
+Fold: 10	f1: 92.792793%
+
+Max Validation f1: 99.581590% 
+Training f1: 97.821970% 
+Test f1: 97.929869% 
+Time Elapsed: 6.067 s 
+===========Simulated Annealing=========
+Fold: 1	f1: 89.400922%
+Fold: 2	f1: 95.652174%
+Fold: 3	f1: 100.000000%
+Fold: 4	f1: 80.597015%
+Fold: 5	f1: 76.923077%
+Fold: 6	f1: 82.352941%
+Fold: 7	f1: 23.529412%
+Fold: 8	f1: 92.857143%
+Fold: 9	f1: 97.435897%
+Fold: 10	f1: 96.069869%
+
+Max Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 5.771 s 
+===========Genetic Algorithms=========
+Fold: 1	f1: 96.995708%
+Fold: 2	f1: 100.000000%
+Fold: 3	f1: 100.000000%
+Fold: 4	f1: 97.435897%
+Fold: 5	f1: 100.000000%
+Fold: 6	f1: 97.435897%
+Fold: 7	f1: 100.000000%
+Fold: 8	f1: 92.376682%
+Fold: 9	f1: 99.581590%
+Fold: 10	f1: 97.413793%
+
+Max Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 721.318 s 
+===========Backprop=========
+Fold: 1	f1: 99.581590%
+Fold: 2	f1: 100.000000%
+Fold: 3	f1: 100.000000%
+Fold: 4	f1: 100.000000%
+Fold: 5	f1: 99.581590%
+Fold: 6	f1: 99.581590%
+Fold: 7	f1: 100.000000%
+Fold: 8	f1: 99.581590%
+Fold: 9	f1: 99.581590%
+Fold: 10	f1: 99.578059%
+
+Convergence in 1000 iterations
+
+Max Validation f1: 100.000000% 
+Training f1: 99.674570% 
+Test f1: 99.709423% 
+Time Elapsed: 23.048 s 
+===========Randomized Hill Climbing=========
+Fold: 1	f1: 89.908257%
+Fold: 2	f1: 86.792453%
+Fold: 3	f1: 96.103896%
+Fold: 4	f1: 91.891892%
+Fold: 5	f1: 91.402715%
+Fold: 6	f1: 89.400922%
+Fold: 7	f1: 94.273128%
+Fold: 8	f1: 89.908257%
+Fold: 9	f1: 95.652174%
+Fold: 10	f1: 91.818182%
+
+Max Validation f1: 96.103896% 
+Training f1: 92.743539% 
+Test f1: 93.097345% 
+Time Elapsed: 11.641 s 
+===========Simulated Annealing=========
+Fold: 1	f1: 99.581590%
+Fold: 2	f1: 93.333333%
+Fold: 3	f1: 97.872340%
+Fold: 4	f1: 96.995708%
+Fold: 5	f1: 100.000000%
+Fold: 6	f1: 97.435897%
+Fold: 7	f1: 97.872340%
+Fold: 8	f1: 100.000000%
+Fold: 9	f1: 89.400922%
+Fold: 10	f1: 95.154185%
+
+Max Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 12.189 s 
+===========Genetic Algorithms=========
+Fold: 1	f1: 94.273128%
+Fold: 2	f1: 94.736842%

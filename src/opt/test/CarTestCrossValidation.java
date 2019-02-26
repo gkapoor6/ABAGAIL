@@ -49,11 +49,14 @@ public class CarTestCrossValidation {
 
 	//  TODO: Manipulate these value. They are your hyper parameters for the Neural Network
 	  private static int hiddenLayer = 10;
-	  private static int trainingIterations = 5;
+	  private static int trainingIterations;
 
 	//  This is determined later
 	  private static int outputLayer;
-
+	  
+	// Arguments for algorithms
+	  private static double t,cooling;
+	  private static int popSize, toMate, toMutate;
 
 	  private static BackPropagationNetworkFactory factory = new BackPropagationNetworkFactory();
 	  private static ErrorMeasure measure = new SumOfSquaresError();
@@ -74,8 +77,18 @@ public class CarTestCrossValidation {
 
 	  private static List<Instance[]> folds;
 
+	  public CarTestCrossValidation(int trainingIterations, double t, double cooling, int popSize, int toMate, int toMutate) {
+    	
+		  CarTestCrossValidation.trainingIterations = trainingIterations;
+		  CarTestCrossValidation.t = t;
+		  CarTestCrossValidation.cooling = cooling;
+		  CarTestCrossValidation.popSize = popSize;
+		  CarTestCrossValidation.toMate = toMate;
+		  CarTestCrossValidation.toMutate = toMutate;
+	  }
+	    
 
-	  public static void main(String[] args) {
+	  public void run() {
 		  
 	    initializeInstances();
 //	    Handles cross-fold validation using K folds
@@ -84,8 +97,8 @@ public class CarTestCrossValidation {
 
 	    runBackprop();
 	    runRHC();
-	    runSA();
-	    runGA();
+	    runSA(CarTestCrossValidation.t, CarTestCrossValidation.cooling);
+	    runGA(CarTestCrossValidation.popSize, CarTestCrossValidation.toMate, CarTestCrossValidation.toMutate);
 	  }
 
 	  /**
@@ -159,11 +172,7 @@ public class CarTestCrossValidation {
 	  /**
 	   * Run simulated annealing
 	   */
-	  public static void runSA() {
-
-//	    TODO: Tweak these params for SA
-	    double temp = 1E11;
-	    double cooling = 0.999;
+	  public static void runSA(double t, double cooling) {
 
 	    System.out.println("===========Simulated Annealing=========");
 
@@ -186,7 +195,7 @@ public class CarTestCrossValidation {
 	      nets[i] = factory.createClassificationNetwork(
 	          new int[] {inputLayer, hiddenLayer, outputLayer});
 	      nnops[i] = new NeuralNetworkOptimizationProblem(trnfoldsSet, nets[i], measure);
-	      oas[i] = new SimulatedAnnealing(temp, cooling, nnops[i]);
+	      oas[i] = new SimulatedAnnealing(t, cooling, nnops[i]);
 
 	      BackPropagationNetwork backpropNet = nets[i];
 
@@ -229,12 +238,7 @@ public class CarTestCrossValidation {
 	  /**
 	   * Run genetic algorithms.
 	   */
-	  public static void runGA() {
-
-//	    TODO: Tweak these params for GA
-	    int populationSize = 200;
-	    int toMate = 100;
-	    int toMutate = 20;
+	  public static void runGA(int popSize, int toMate, int toMutate) {
 
 	    System.out.println("===========Genetic Algorithms=========");
 
@@ -257,7 +261,7 @@ public class CarTestCrossValidation {
 	      nets[i] = factory.createClassificationNetwork(
 	          new int[] {inputLayer, hiddenLayer, outputLayer});
 	      nnops[i] = new NeuralNetworkOptimizationProblem(trnfoldsSet, nets[i], measure);
-	      oas[i] = new StandardGeneticAlgorithm(populationSize, toMate, toMutate, nnops[i]);
+	      oas[i] = new StandardGeneticAlgorithm(popSize, toMate, toMutate, nnops[i]);
 
 	      BackPropagationNetwork backpropNet = nets[i];
 
