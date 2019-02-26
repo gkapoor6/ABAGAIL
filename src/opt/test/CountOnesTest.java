@@ -1,6 +1,8 @@
 package opt.test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import dist.DiscreteDependencyTree;
 import dist.DiscreteUniformDistribution;
@@ -47,6 +49,9 @@ public class CountOnesTest {
         HillClimbingProblem hcp = new GenericHillClimbingProblem(ef, odd, nf);
         GeneticAlgorithmProblem gap = new GenericGeneticAlgorithmProblem(ef, odd, mf, cf);
         ProbabilisticOptimizationProblem pop = new GenericProbabilisticOptimizationProblem(ef, odd, df);
+        
+        List<Long> rhcResults = new ArrayList<>();
+        List<Double> rhcTimes = new ArrayList<>();
         
         RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);      
         FixedIterationTrainer fit = new FixedIterationTrainer(rhc, 200);
