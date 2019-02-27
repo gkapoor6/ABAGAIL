@@ -136,19 +136,20 @@ public class CarTestCrossValidation {
 
 
 	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
 	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
 	    }
 
 
 	    int best_index = -1;
-	    double max = 0.0;
+	    double avg = 0.0;
 	    for (int j = 0; j < validationf1s.length; j++) {
-	      if (validationf1s[j] > max) {
+	      if (validationf1s[j] > avg) {
 	        best_index = j;
-	        max = validationf1s[j];
+	        avg += validationf1s[j];
 	      }
 	    }
+	    
+	    avg = avg/validationf1s.length;
 
 	    BackPropagationNetwork bestNet = nets[best_index];
 	    double validationf1 = validationf1s[best_index];
@@ -156,9 +157,9 @@ public class CarTestCrossValidation {
 	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
 
 
-	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
-	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
-	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
+	    System.out.printf("Average Validation error: %f%% %n", validationf1 * 100);
+	    System.out.printf("Training error: %f%% %n", trainf1 * 100);
+	    System.out.printf("Test error: %f%% %n", testf1 * 100);
 
 	    endtime = System.nanoTime();
 	    double time_elapsed = endtime - starttime;
@@ -203,19 +204,20 @@ public class CarTestCrossValidation {
 	      train(oas[i], nets[i], trainingIterations);
 
 	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
 	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
 	    }
 
 
 	    int best_index = -1;
-	    double max = 0.0;
+	    double avg = 0.0;
 	    for (int j = 0; j < validationf1s.length; j++) {
-	      if (validationf1s[j] > max) {
+	      if (validationf1s[j] > avg) {
 	        best_index = j;
-	        max = validationf1s[j];
+	        avg += validationf1s[j];
 	      }
 	    }
+	    
+	    avg = avg/validationf1s.length;
 
 	    BackPropagationNetwork bestNet = nets[best_index];
 	    double validationf1 = validationf1s[best_index];
@@ -223,9 +225,10 @@ public class CarTestCrossValidation {
 	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
 
 
-	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
-	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
-	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
+	    System.out.printf("Average Validation error: %f%% %n", validationf1 * 100);
+	    System.out.printf("Training error: %f%% %n", trainf1 * 100);
+	    System.out.printf("Test error: %f%% %n", testf1 * 100);
+
 
 	    endtime = System.nanoTime();
 	    double time_elapsed = endtime - starttime;
@@ -269,7 +272,6 @@ public class CarTestCrossValidation {
 	      train(oas[i], nets[i], trainingIterations);
 
 	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
 	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
 	    }
 
@@ -288,10 +290,9 @@ public class CarTestCrossValidation {
 	    double trainf1 = trainf1s[best_index];
 	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
 
-
-	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
-	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
-	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
+	    System.out.printf("Average Validation error: %f%% %n", validationf1 * 100);
+	    System.out.printf("Training error: %f%% %n", trainf1 * 100);
+	    System.out.printf("Test error: %f%% %n", testf1 * 100);
 
 	    endtime = System.nanoTime();
 	    double time_elapsed = endtime - starttime;
@@ -338,7 +339,6 @@ public class CarTestCrossValidation {
 	      trainer.train();
 
 	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
 	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
 	    }
 
@@ -359,10 +359,11 @@ public class CarTestCrossValidation {
 
 	    System.out.println("\nConvergence in " + trainingIterations + " iterations");
 
-	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
-	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
-	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
+	    System.out.printf("Average Validation error: %f%% %n", validationf1 * 100);
+	    System.out.printf("Training error: %f%% %n", trainf1 * 100);
+	    System.out.printf("Test error: %f%% %n", testf1 * 100);
 
+	    
 	    endtime = System.nanoTime();
 	    double time_elapsed = endtime - starttime;
 
@@ -399,53 +400,28 @@ public class CarTestCrossValidation {
 	   * @return
 	   */
 	  public static double evaluateNetwork(BackPropagationNetwork network, Instance[] data) {
-		// Output the F1 score
-        double tp = 0.0, tn = 0.0, fp = 0.0, fn = 0.0;
-        double accuracy = 0.0, precision = 0.0, recall = 0.0, f1 = 0.0;
-        
-	    for (int j = 0; j < data.length; j++) {
-	    	
-	      network.setInputValues(data[j].getData());
-	      network.run();
+	        
+			    double num_incorrect = 0;
+			    double error = 0;
 
-          double actual = data[j].getLabel().getData().get(data[j].getLabel().getData().argMax());
-	      double predicted = network.getOutputValues().get(network.getOutputValues().argMax());
+			    for (int j = 0; j < data.length; j++) {
+			      network.setInputValues(data[j].getData());
+			      network.run();
 
-          // calculate F1 score - code by PHPCoderBlog 
-          // at (https://phpcoderblog.wordpress.com/2017/11/02/how-to-calculate-accuracy-precision-recall-and-f1-score-deep-learning-precision-recall-f-score-calculating-precision-recall-python-precision-recall-scikit-precision-recall-ml-metrics-to-use-bi/)
-          
-          // if predicted == 1
-          if (Math.abs(predicted - 1) < 0.5) 
-          {
-              if (Math.abs(actual - predicted) < 0.5)
-              {
-              	tp++;
-              } else {
-              	fp++;
-              }
-          }
-          // if predicted == 0
-          else {
-              if (Math.abs(actual - predicted) < 0.5)
-              {
-              	tn++;
-              } else {
-              	fn++;
-              }
-          }
-          
-	    }
-        // a ratio of correctly predicted observation to the total observations
-        accuracy = (tp + tn)/(tp + tn + fp + fn);
-     
-        // precision is "how useful the search results are"
-        precision = tp / (tp + fp);
-        
-        // recall is "how complete the results are"
-        recall = tp / (tp + fn);
-     
-        f1 = 2 / ((1 / precision) + (1 / recall));
-	    return f1;
+			      Vector actual = data[j].getLabel().getData();
+			      Vector predicted = network.getOutputValues();
+
+
+			      boolean mismatch = ! isEqualOutputs(actual, predicted);
+
+			      if (mismatch) {
+			        num_incorrect += 1;
+			      }
+
+			    }
+
+			    error = num_incorrect / data.length;
+			    return error;
 
 	  }
 

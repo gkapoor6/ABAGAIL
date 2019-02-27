@@ -1,180 +1,179 @@
 t = 1.0E9, cooling = 0.2
-Average Validation f1: 98.734177% 
-Training f1: 97.140133% 
-Test f1: 97.278912% 
-Time Elapsed: 10.960 s 
+Average Validation error: 30.833333% 
+Training error: 21.223355% 
+Test error: 22.185430% 
+Time Elapsed: 12.374 s 
 
 t = 1.0E10, cooling = 0.2
-Average Validation f1: 94.273128% 
-Training f1: 94.474328% 
-Test f1: 94.497817% 
-Time Elapsed: 10.736 s 
+Average Validation error: 30.833333% 
+Training error: 24.652456% 
+Test error: 25.413907% 
+Time Elapsed: 11.384 s 
 
 t = 1.0E11, cooling = 0.2
-Average Validation f1: 90.410959% 
-Training f1: 90.010194% 
-Test f1: 90.131878% 
-Time Elapsed: 10.759 s 
+Average Validation error: 36.666667% 
+Training error: 24.652456% 
+Test error: 25.993377% 
+Time Elapsed: 11.455 s 
 
 t = 1.0E12, cooling = 0.2
-Average Validation f1: 93.805310% 
-Training f1: 94.680332% 
-Test f1: 94.543867% 
-Time Elapsed: 10.698 s 
+Average Validation error: 32.500000% 
+Training error: 28.359592% 
+Test error: 28.807947% 
+Time Elapsed: 11.329 s 
 
 t = 1.0E13, cooling = 0.2
-Average Validation f1: 91.402715% 
-Training f1: 92.956349% 
-Test f1: 92.765202% 
-Time Elapsed: 11.033 s 
+Average Validation error: 40.000000% 
+Training error: 28.081557% 
+Test error: 29.387417% 
+Time Elapsed: 11.468 s 
 
 t = 1.0E15, cooling = 0.2
-Average Validation f1: 95.196507% 
-Training f1: 95.293547% 
-Test f1: 95.275249% 
-Time Elapsed: 11.050 s 
+Average Validation error: 36.666667% 
+Training error: 25.208526% 
+Test error: 26.324503% 
+Time Elapsed: 11.286 s 
 
 t = 1.0E9, cooling = 0.4
-Average Validation f1: 94.736842% 
-Training f1: 90.401219% 
-Test f1: 90.728177% 
-Time Elapsed: 10.891 s 
+Average Validation error: 30.833333% 
+Training error: 27.062095% 
+Test error: 27.400662% 
+Time Elapsed: 11.557 s 
 
 t = 1.0E10, cooling = 0.4
-Average Validation f1: 91.402715% 
-Training f1: 91.284635% 
-Test f1: 91.318039% 
-Time Elapsed: 11.325 s 
+Average Validation error: 23.333333% 
+Training error: 26.691381% 
+Test error: 26.241722% 
+Time Elapsed: 11.337 s 
 
 t = 1.0E11, cooling = 0.4
-Average Validation f1: 97.435897% 
-Training f1: 93.168317% 
-Test f1: 93.661972% 
-Time Elapsed: 11.452 s 
+Average Validation error: 26.666667% 
+Training error: 23.354958% 
+Test error: 23.675497% 
+Time Elapsed: 11.554 s 
 
 t = 1.0E12, cooling = 0.4
-Average Validation f1: 91.891892% 
-Training f1: 91.503268% 
-Test f1: 91.561939% 
-Time Elapsed: 10.859 s 
+Average Validation error: 30.000000% 
+Training error: 27.988879% 
+Test error: 28.228477% 
+Time Elapsed: 11.188 s 
 
 t = 1.0E13, cooling = 0.4
-Average Validation f1: 89.908257% 
-Training f1: 90.178117% 
-Test f1: 90.131878% 
-Time Elapsed: 11.029 s 
+Average Validation error: 32.500000% 
+Training error: 29.101019% 
+Test error: 29.470199% 
+Time Elapsed: 12.658 s 
 
 t = 1.0E15, cooling = 0.4
-Average Validation f1: 99.159664% 
-Training f1: 98.303487% 
-Test f1: 98.402019% 
-Time Elapsed: 10.829 s 
+Average Validation error: 23.333333% 
+Training error: 22.057461% 
+Test error: 22.102649% 
+Time Elapsed: 19.609 s 
 
 t = 1.0E9, cooling = 0.6
-Average Validation f1: 97.435897% 
-Training f1: 97.041985% 
-Test f1: 97.103918% 
-Time Elapsed: 10.973 s 
+Average Validation error: 30.833333% 
+Training error: 29.657090% 
+Test error: 30.049669% 
+Time Elapsed: 20.702 s 
 
 t = 1.0E10, cooling = 0.6
-Average Validation f1: 93.333333% 
-Training f1: 93.537247% 
-Test f1: 93.521375% 
-Time Elapsed: 11.051 s 
+Average Validation error: 28.333333% 
+Training error: 25.486562% 
+Test error: 25.745033% 
+Time Elapsed: 21.508 s 
 
 t = 1.0E11, cooling = 0.6
-Average Validation f1: 97.872340% 
-Training f1: 96.399424% 
-Test f1: 96.575342% 
-Time Elapsed: 10.786 s 
+Average Validation error: 33.333333% 
+Training error: 28.730306% 
+Test error: 29.056291% 
+Time Elapsed: 21.184 s 
 
 t = 1.0E12, cooling = 0.6
-Average Validation f1: 92.857143% 
-Training f1: 88.648091% 
-Test f1: 88.970588% 
-Time Elapsed: 11.083 s 
+Average Validation error: 32.500000% 
+Training error: 29.657090% 
+Test error: 29.966887% 
+Time Elapsed: 21.917 s 
 
 t = 1.0E13, cooling = 0.6
-Average Validation f1: 97.435897% 
-Training f1: 97.140133% 
-Test f1: 97.191489% 
-Time Elapsed: 11.017 s 
+Average Validation error: 27.500000% 
+Training error: 29.657090% 
+Test error: 29.552980% 
+Time Elapsed: 21.370 s 
 
 t = 1.0E15, cooling = 0.6
-Average Validation f1: 94.736842% 
-Training f1: 90.456853% 
-Test f1: 90.974729% 
-Time Elapsed: 11.110 s 
+Average Validation error: 31.666667% 
+Training error: 24.930491% 
+Test error: 25.745033% 
+Time Elapsed: 21.575 s 
 
 t = 1.0E9, cooling = 0.8
-Average Validation f1: 92.376682% 
-Training f1: 93.379447% 
-Test f1: 93.333333% 
-Time Elapsed: 10.853 s 
+Average Validation error: 35.000000% 
+Training error: 26.969416% 
+Test error: 27.731788% 
+Time Elapsed: 15.240 s 
 
 t = 1.0E10, cooling = 0.8
-Average Validation f1: 100.000000% 
-Training f1: 100.000000% 
-Test f1: 100.000000% 
-Time Elapsed: 10.919 s 
+Average Validation error: 31.666667% 
+Training error: 26.691381% 
+Test error: 27.235099% 
+Time Elapsed: 13.968 s 
 
 t = 1.0E11, cooling = 0.8
-Average Validation f1: 99.581590% 
-Training f1: 99.393939% 
-Test f1: 99.417152% 
-Time Elapsed: 11.024 s 
+Average Validation error: 27.500000% 
+Training error: 29.935125% 
+Test error: 29.718543% 
+Time Elapsed: 11.773 s 
 
 t = 1.0E12, cooling = 0.8
-Average Validation f1: 91.402715% 
-Training f1: 88.991770% 
-Test f1: 89.225126% 
-Time Elapsed: 10.972 s 
+Average Validation error: 33.333333% 
+Training error: 29.379055% 
+Test error: 29.635762% 
+Time Elapsed: 12.044 s 
 
 t = 1.0E13, cooling = 0.8
-Average Validation f1: 97.872340% 
-Training f1: 96.250000% 
-Test f1: 96.442349% 
-Time Elapsed: 10.985 s 
+Average Validation error: 31.666667% 
+Training error: 28.266914% 
+Test error: 28.890728% 
+Time Elapsed: 12.068 s 
 
 t = 1.0E15, cooling = 0.8
-Average Validation f1: 98.305085% 
-Training f1: 97.966903% 
-Test f1: 98.016041% 
-Time Elapsed: 10.937 s 
+Average Validation error: 27.500000% 
+Training error: 30.305839% 
+Test error: 30.049669% 
+Time Elapsed: 11.342 s 
 
 t = 1.0E9, cooling = 0.99
-Average Validation f1: 100.000000% 
-Training f1: 100.000000% 
-Test f1: 100.000000% 
-Time Elapsed: 10.917 s 
+Average Validation error: 79.166667% 
+Training error: 77.757183% 
+Test error: 77.814570% 
+Time Elapsed: 11.392 s 
 
 t = 1.0E10, cooling = 0.99
-Average Validation f1: 99.581590% 
-Training f1: 99.953639% 
-Test f1: 99.917150% 
-Time Elapsed: 11.158 s 
+Average Validation error: 96.666667% 
+Training error: 93.512512% 
+Test error: 93.874172% 
+Time Elapsed: 11.160 s 
 
 t = 1.0E11, cooling = 0.99
-Average Validation f1: 100.000000% 
-Training f1: 100.000000% 
-Test f1: 100.000000% 
-Time Elapsed: 11.012 s 
+Average Validation error: 70.833333% 
+Training error: 72.845227% 
+Test error: 72.682119% 
+Time Elapsed: 11.401 s 
 
 t = 1.0E12, cooling = 0.99
-Average Validation f1: 100.000000% 
-Training f1: 100.000000% 
-Test f1: 100.000000% 
-Time Elapsed: 10.844 s 
+Average Validation error: 95.833333% 
+Training error: 95.829472% 
+Test error: 95.860927% 
+Time Elapsed: 11.825 s 
 
 t = 1.0E13, cooling = 0.99
-Average Validation f1: 98.734177% 
-Training f1: 98.637858% 
-Test f1: 98.657718% 
-Time Elapsed: 11.039 s 
+Average Validation error: 85.833333% 
+Training error: 87.210380% 
+Test error: 87.168874% 
+Time Elapsed: 12.657 s 
 
 t = 1.0E15, cooling = 0.99
-Average Validation f1: 100.000000% 
-Training f1: 100.000000% 
-Test f1: 100.000000% 
-Time Elapsed: 10.925 s 
-
+Average Validation error: 95.833333% 
+Training error: 95.644115% 
+Test error: 95.695364% 
+Time Elapsed: 17.985 s 

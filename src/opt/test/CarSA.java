@@ -151,9 +151,9 @@ public class CarSA {
 	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
 
 
-	    System.out.printf("Average Validation f1: %f%% %n", validationf1 * 100);
-	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
-	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
+	    System.out.printf("Average Validation error: %f%% %n", validationf1 * 100);
+	    System.out.printf("Training error: %f%% %n", trainf1 * 100);
+	    System.out.printf("Test error: %f%% %n", testf1 * 100);
 
 	    endtime = System.nanoTime();
 	    double time_elapsed = endtime - starttime;
@@ -193,53 +193,29 @@ public class CarSA {
 	   * @return
 	   */
 	  public static double evaluateNetwork(BackPropagationNetwork network, Instance[] data) {
-		// Output the F1 score
-        double tp = 0.0, tn = 0.0, fp = 0.0, fn = 0.0;
-        double accuracy = 0.0, precision = 0.0, recall = 0.0, f1 = 0.0;
-        
-	    for (int j = 0; j < data.length; j++) {
-	    	
-	      network.setInputValues(data[j].getData());
-	      network.run();
 
-          double actual = data[j].getLabel().getData().get(data[j].getLabel().getData().argMax());
-	      double predicted = network.getOutputValues().get(network.getOutputValues().argMax());
-
-          // calculate F1 score - code by PHPCoderBlog 
-          // at (https://phpcoderblog.wordpress.com/2017/11/02/how-to-calculate-accuracy-precision-recall-and-f1-score-deep-learning-precision-recall-f-score-calculating-precision-recall-python-precision-recall-scikit-precision-recall-ml-metrics-to-use-bi/)
-          
-          // if predicted == 1
-          if (Math.abs(predicted - 1) < 0.5) 
-          {
-              if (Math.abs(actual - predicted) < 0.5)
-              {
-              	tp++;
-              } else {
-              	fp++;
-              }
-          }
-          // if predicted == 0
-          else {
-              if (Math.abs(actual - predicted) < 0.5)
-              {
-              	tn++;
-              } else {
-              	fn++;
-              }
-          }
-          
-	    }
-        // a ratio of correctly predicted observation to the total observations
-        accuracy = (tp + tn)/(tp + tn + fp + fn);
-     
-        // precision is "how useful the search results are"
-        precision = tp / (tp + fp);
         
-        // recall is "how complete the results are"
-        recall = tp / (tp + fn);
-     
-        f1 = 2 / ((1 / precision) + (1 / recall));
-	    return f1;
+		    double num_incorrect = 0;
+		    double error = 0;
+
+		    for (int j = 0; j < data.length; j++) {
+		      network.setInputValues(data[j].getData());
+		      network.run();
+
+		      Vector actual = data[j].getLabel().getData();
+		      Vector predicted = network.getOutputValues();
+
+
+		      boolean mismatch = ! isEqualOutputs(actual, predicted);
+
+		      if (mismatch) {
+		        num_incorrect += 1;
+		      }
+
+		    }
+
+		    error = num_incorrect / data.length;
+		    return error;
 
 	  }
 
