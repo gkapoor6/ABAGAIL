@@ -1,0 +1,180 @@
+t = 1.0E9, cooling = 0.2
+Average Validation f1: 98.734177% 
+Training f1: 97.140133% 
+Test f1: 97.278912% 
+Time Elapsed: 10.960 s 
+
+t = 1.0E10, cooling = 0.2
+Average Validation f1: 94.273128% 
+Training f1: 94.474328% 
+Test f1: 94.497817% 
+Time Elapsed: 10.736 s 
+
+t = 1.0E11, cooling = 0.2
+Average Validation f1: 90.410959% 
+Training f1: 90.010194% 
+Test f1: 90.131878% 
+Time Elapsed: 10.759 s 
+
+t = 1.0E12, cooling = 0.2
+Average Validation f1: 93.805310% 
+Training f1: 94.680332% 
+Test f1: 94.543867% 
+Time Elapsed: 10.698 s 
+
+t = 1.0E13, cooling = 0.2
+Average Validation f1: 91.402715% 
+Training f1: 92.956349% 
+Test f1: 92.765202% 
+Time Elapsed: 11.033 s 
+
+t = 1.0E15, cooling = 0.2
+Average Validation f1: 95.196507% 
+Training f1: 95.293547% 
+Test f1: 95.275249% 
+Time Elapsed: 11.050 s 
+
+t = 1.0E9, cooling = 0.4
+Average Validation f1: 94.736842% 
+Training f1: 90.401219% 
+Test f1: 90.728177% 
+Time Elapsed: 10.891 s 
+
+t = 1.0E10, cooling = 0.4
+Average Validation f1: 91.402715% 
+Training f1: 91.284635% 
+Test f1: 91.318039% 
+Time Elapsed: 11.325 s 
+
+t = 1.0E11, cooling = 0.4
+Average Validation f1: 97.435897% 
+Training f1: 93.168317% 
+Test f1: 93.661972% 
+Time Elapsed: 11.452 s 
+
+t = 1.0E12, cooling = 0.4
+Average Validation f1: 91.891892% 
+Training f1: 91.503268% 
+Test f1: 91.561939% 
+Time Elapsed: 10.859 s 
+
+t = 1.0E13, cooling = 0.4
+Average Validation f1: 89.908257% 
+Training f1: 90.178117% 
+Test f1: 90.131878% 
+Time Elapsed: 11.029 s 
+
+t = 1.0E15, cooling = 0.4
+Average Validation f1: 99.159664% 
+Training f1: 98.303487% 
+Test f1: 98.402019% 
+Time Elapsed: 10.829 s 
+
+t = 1.0E9, cooling = 0.6
+Average Validation f1: 97.435897% 
+Training f1: 97.041985% 
+Test f1: 97.103918% 
+Time Elapsed: 10.973 s 
+
+t = 1.0E10, cooling = 0.6
+Average Validation f1: 93.333333% 
+Training f1: 93.537247% 
+Test f1: 93.521375% 
+Time Elapsed: 11.051 s 
+
+t = 1.0E11, cooling = 0.6
+Average Validation f1: 97.872340% 
+Training f1: 96.399424% 
+Test f1: 96.575342% 
+Time Elapsed: 10.786 s 
+
+t = 1.0E12, cooling = 0.6
+Average Validation f1: 92.857143% 
+Training f1: 88.648091% 
+Test f1: 88.970588% 
+Time Elapsed: 11.083 s 
+
+t = 1.0E13, cooling = 0.6
+Average Validation f1: 97.435897% 
+Training f1: 97.140133% 
+Test f1: 97.191489% 
+Time Elapsed: 11.017 s 
+
+t = 1.0E15, cooling = 0.6
+Average Validation f1: 94.736842% 
+Training f1: 90.456853% 
+Test f1: 90.974729% 
+Time Elapsed: 11.110 s 
+
+t = 1.0E9, cooling = 0.8
+Average Validation f1: 92.376682% 
+Training f1: 93.379447% 
+Test f1: 93.333333% 
+Time Elapsed: 10.853 s 
+
+t = 1.0E10, cooling = 0.8
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 10.919 s 
+
+t = 1.0E11, cooling = 0.8
+Average Validation f1: 99.581590% 
+Training f1: 99.393939% 
+Test f1: 99.417152% 
+Time Elapsed: 11.024 s 
+
+t = 1.0E12, cooling = 0.8
+Average Validation f1: 91.402715% 
+Training f1: 88.991770% 
+Test f1: 89.225126% 
+Time Elapsed: 10.972 s 
+
+t = 1.0E13, cooling = 0.8
+Average Validation f1: 97.872340% 
+Training f1: 96.250000% 
+Test f1: 96.442349% 
+Time Elapsed: 10.985 s 
+
+t = 1.0E15, cooling = 0.8
+Average Validation f1: 98.305085% 
+Training f1: 97.966903% 
+Test f1: 98.016041% 
+Time Elapsed: 10.937 s 
+
+t = 1.0E9, cooling = 0.99
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 10.917 s 
+
+t = 1.0E10, cooling = 0.99
+Average Validation f1: 99.581590% 
+Training f1: 99.953639% 
+Test f1: 99.917150% 
+Time Elapsed: 11.158 s 
+
+t = 1.0E11, cooling = 0.99
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 11.012 s 
+
+t = 1.0E12, cooling = 0.99
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 10.844 s 
+
+t = 1.0E13, cooling = 0.99
+Average Validation f1: 98.734177% 
+Training f1: 98.637858% 
+Test f1: 98.657718% 
+Time Elapsed: 11.039 s 
+
+t = 1.0E15, cooling = 0.99
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 10.925 s 
+

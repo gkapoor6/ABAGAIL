@@ -35,7 +35,7 @@ public class CarSA {
 	//  These fields are hardcoded, depending on your problem
 
 	//  Filename for your csv dataset
-	  private static URL path = CarTest.class.getResource("car_processed.csv");
+	  private static URL path = CarTestCrossValidation.class.getResource("car_processed.csv");
 
 	//  How many examples your have
 	  private static int num_examples = 1727;
@@ -92,7 +92,6 @@ public class CarSA {
 	    makeTestTrainSets();
 	    folds = kfolds(trainSet);
 
-	    runBackprop();
 	    runSA(CarSA.t, CarSA.cooling);
 	  }
 
@@ -102,7 +101,7 @@ public class CarSA {
 	   */
 	  public static void runSA(double t, double cooling) {
 
-	    System.out.println("===========Simulated Annealing=========");
+	    System.out.print("t = " + t + ", cooling = " + cooling + "\n");
 
 	    BackPropagationNetwork[] nets = new BackPropagationNetwork[K];
 	    NeuralNetworkOptimizationProblem[] nnops = new NeuralNetworkOptimizationProblem[K];
@@ -131,19 +130,20 @@ public class CarSA {
 	      train(oas[i], nets[i], trainingIterations);
 
 	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
 	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
 	    }
 
 
 	    int best_index = -1;
-	    double max = 0.0;
+	    double avg = 0.0;
 	    for (int j = 0; j < validationf1s.length; j++) {
-	      if (validationf1s[j] > max) {
+	      if (validationf1s[j] > avg) {
 	        best_index = j;
-	        max = validationf1s[j];
+	        avg += validationf1s[j];
 	      }
 	    }
+	    
+	    avg = avg/validationf1s.length;
 
 	    BackPropagationNetwork bestNet = nets[best_index];
 	    double validationf1 = validationf1s[best_index];
@@ -151,7 +151,7 @@ public class CarSA {
 	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
 
 
-	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
+	    System.out.printf("Average Validation f1: %f%% %n", validationf1 * 100);
 	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
 	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
 
@@ -161,78 +161,10 @@ public class CarSA {
 //	    Convert nanoseconds to seconds
 	    time_elapsed /= Math.pow(10,9);
 	    System.out.printf("Time Elapsed: %s s %n", df.format(time_elapsed));
+	    System.out.println();
 	  }
 
 
-	  /**
-	   * This method will run Backpropagation using each
-	   * combination of (K-1) folds for training, and the Kth fold for validation. Once the model
-	   * with the lowest validation set f1 is found, that is used as the "best" model and the
-	   * training and test f1s on that model are recorded.
-	   */
-	  public static void runBackprop() {
-
-	    System.out.println("===========Backprop=========");
-
-	    BackPropagationNetwork[] nets = new BackPropagationNetwork[K];
-	    double[] validationf1s = new double[nets.length];
-	    double[] trainf1s = new double[nets.length];
-
-	    double starttime = System.nanoTime();;
-	    double endtime;
-
-	    for (int i = 0; i < nets.length; i++) {
-
-	      Instance[] validation = getValidationFold(folds, i);
-	      Instance[] trainFolds = getTrainFolds(folds, i);
-	      DataSet trnfoldsSet = new DataSet(trainFolds);
-
-	      nets[i] = factory.createClassificationNetwork(
-	          new int[]{inputLayer, hiddenLayer, outputLayer});
-
-	      BackPropagationNetwork backpropNet = nets[i];
-
-	      ConvergenceTrainer trainer = new ConvergenceTrainer(
-	          new BatchBackPropagationTrainer(trnfoldsSet, backpropNet, new SumOfSquaresError(),
-	              new RPROPUpdateRule()),
-	          backprop_threshold, trainingIterations);
-
-	      trainer.train();
-
-	      validationf1s[i] = evaluateNetwork(backpropNet, validation);
-	      System.out.printf("Fold: %d\tf1: %f%%%n", i+1, validationf1s[i] * 100);
-	      trainf1s[i] = evaluateNetwork(backpropNet, trainFolds);
-	    }
-
-	    int best_index = -1;
-	    double max = 0.0;
-	    for (int j = 0; j < validationf1s.length; j++) {
-	      if (validationf1s[j] > max) {
-	        best_index = j;
-	        max = validationf1s[j];
-	      }
-	    }
-
-	    BackPropagationNetwork bestNet = nets[best_index];
-	    double validationf1 = validationf1s[best_index];
-	    double trainf1 = trainf1s[best_index];
-	    double testf1 = evaluateNetwork(bestNet, testSet.getInstances());
-
-
-	    System.out.println("\nConvergence in " + trainingIterations + " iterations");
-
-	    System.out.printf("%nMax Validation f1: %f%% %n", validationf1 * 100);
-	    System.out.printf("Training f1: %f%% %n", trainf1 * 100);
-	    System.out.printf("Test f1: %f%% %n", testf1 * 100);
-
-	    endtime = System.nanoTime();
-	    double time_elapsed = endtime - starttime;
-
-//	    Convert nanoseconds to seconds
-	    time_elapsed /= Math.pow(10,9);
-	    System.out.printf("Time Elapsed: %s s %n", df.format(time_elapsed));
-
-	  }
 
 	  /**
 	   * Train a given optimization problem for a given number of iterations. Called by RHC, SA, and

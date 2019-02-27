@@ -41,7 +41,8 @@ public class CarMain {
 //    	car6.run();
     	
     	// Vary Temperature (1E9 - 1E15) AND Cooling Rate for SA (0.2 - 0.95) with 1000 iterations
-//    	
+    	// Run a Grid Search
+    	
 //    	CarSA car1 = new CarSA(1000, 1E9, .2);
 //    	car1.run();
 //    	CarSA car2 = new CarSA(1000, 1E10, .2);
@@ -54,20 +55,7 @@ public class CarMain {
 //    	car5.run();
 //    	CarSA car6 = new CarSA(1000, 1E15, .2);
 //    	car6.run();
-//    	
-//    	CarSA car11 = new CarSA(1000, 1E9, .3);
-//    	car11.run();
-//    	CarSA car21 = new CarSA(1000, 1E10, .3);
-//    	car21.run();
-//    	CarSA car31 = new CarSA(1000, 1E11, .3);
-//    	car31.run();
-//    	CarSA car41 = new CarSA(1000, 1E12, .3);
-//    	car41.run();
-//    	CarSA car51 = new CarSA(1000, 1E13, .3);
-//    	car51.run();
-//    	CarSA car61 = new CarSA(1000, 1E15, .3);
-//    	car61.run();
-//    	
+//	
 //    	CarSA car12 = new CarSA(1000, 1E9, .4);
 //    	car12.run();
 //    	CarSA car22 = new CarSA(1000, 1E10, .4);
@@ -107,19 +95,32 @@ public class CarMain {
 //    	CarSA car64 = new CarSA(1000, 1E15, .8);
 //    	car64.run();
 //    	
-//    	CarSA car15 = new CarSA(1000, 1E9, .95);
+//    	CarSA car15 = new CarSA(1000, 1E9, .99);
 //    	car15.run();
-//    	CarSA car25 = new CarSA(1000, 1E10, .95);
+//    	CarSA car25 = new CarSA(1000, 1E10, .99);
 //    	car25.run();
-//    	CarSA car35 = new CarSA(1000, 1E11, .95);
+//    	CarSA car35 = new CarSA(1000, 1E11, .99);
 //    	car35.run();
-//    	CarSA car45 = new CarSA(1000, 1E12, .95);
+//    	CarSA car45 = new CarSA(1000, 1E12, .99);
 //    	car45.run();
-//    	CarSA car55 = new CarSA(1000, 1E13, .95);
+//    	CarSA car55 = new CarSA(1000, 1E13, .99);
 //    	car55.run();
-//    	CarSA car65 = new CarSA(1000, 1E15, .95);
+//    	CarSA car65 = new CarSA(1000, 1E15, .99);
 //    	car65.run();    	
 //    	
-    }
-
+    	// Vary popSize (100-500), toMate (0-100), toMutate (0-100) with 20 iterations
+    	// population must be greater than toMate, toMutate
+    	// Grid search
+    	
+    	for (int i = 400; i < 501; i += 100) {
+    		for (int j = 0; j < 101; j += 25) {
+    			for (int k = 0; k < 101; k += 25) {
+    				CarGA car = new CarGA(20, i, j, k);
+    				car.run();
+    			}
+    		}
+    	}
+    	
+    	
+    }   
 }

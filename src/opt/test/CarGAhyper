@@ -1,0 +1,751 @@
+popSize = 100, toMate = 0, toMutate = 0
+Average Validation f1: 95.196507% 
+Training f1: 94.319295% 
+Test f1: 94.359423% 
+Time Elapsed: 1.324 s 
+
+popSize = 100, toMate = 0, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 6.118 s 
+
+popSize = 100, toMate = 0, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 99.627907% 
+Test f1: 99.667774% 
+Time Elapsed: 9.681 s 
+
+popSize = 100, toMate = 0, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 12.547 s 
+
+popSize = 100, toMate = 0, toMutate = 100
+Average Validation f1: 97.435897% 
+Training f1: 98.303487% 
+Test f1: 98.145025% 
+Time Elapsed: 14.525 s 
+
+popSize = 100, toMate = 25, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 6.403 s 
+
+popSize = 100, toMate = 25, toMutate = 25
+Average Validation f1: 99.159664% 
+Training f1: 98.637858% 
+Test f1: 98.657718% 
+Time Elapsed: 9.941 s 
+
+popSize = 100, toMate = 25, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 13.170 s 
+
+popSize = 100, toMate = 25, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 14.840 s 
+
+popSize = 100, toMate = 25, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 16.476 s 
+
+popSize = 100, toMate = 50, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 11.716 s 
+
+popSize = 100, toMate = 50, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 14.534 s 
+
+popSize = 100, toMate = 50, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 99.860789% 
+Test f1: 99.875673% 
+Time Elapsed: 19.509 s 
+
+popSize = 100, toMate = 50, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 17.452 s 
+
+popSize = 100, toMate = 50, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 18.517 s 
+
+popSize = 100, toMate = 75, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 18.844 s 
+
+popSize = 100, toMate = 75, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 18.874 s 
+
+popSize = 100, toMate = 75, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 19.487 s 
+
+popSize = 100, toMate = 75, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 20.273 s 
+
+popSize = 100, toMate = 75, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 21.094 s 
+
+popSize = 100, toMate = 100, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 22.614 s 
+
+popSize = 100, toMate = 100, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 99.721190% 
+Test f1: 99.751037% 
+Time Elapsed: 22.815 s 
+
+popSize = 100, toMate = 100, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 99.860789% 
+Test f1: 99.875673% 
+Time Elapsed: 23.963 s 
+
+popSize = 100, toMate = 100, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 25.358 s 
+
+popSize = 100, toMate = 100, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 24.212 s 
+
+popSize = 150, toMate = 0, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 1.665 s 
+
+popSize = 150, toMate = 0, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 99.393939% 
+Test f1: 99.459010% 
+Time Elapsed: 6.598 s 
+
+popSize = 150, toMate = 0, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 10.870 s 
+
+popSize = 150, toMate = 0, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 14.256 s 
+
+popSize = 150, toMate = 0, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 99.907236% 
+Test f1: 99.917150% 
+Time Elapsed: 17.886 s 
+
+popSize = 150, toMate = 25, toMutate = 0
+Average Validation f1: 98.305085% 
+Training f1: 99.064546% 
+Test f1: 98.954412% 
+Time Elapsed: 8.097 s 
+
+popSize = 150, toMate = 25, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 99.581201% 
+Test f1: 99.626091% 
+Time Elapsed: 11.502 s 
+
+popSize = 150, toMate = 25, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 99.581201% 
+Test f1: 99.626091% 
+Time Elapsed: 14.736 s 
+
+popSize = 150, toMate = 25, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 99.860789% 
+Test f1: 99.875673% 
+Time Elapsed: 17.518 s 
+
+popSize = 150, toMate = 25, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 20.132 s 
+
+popSize = 150, toMate = 50, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 12.441 s 
+
+popSize = 150, toMate = 50, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 15.757 s 
+
+popSize = 150, toMate = 50, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 99.907236% 
+Test f1: 99.917150% 
+Time Elapsed: 19.289 s 
+
+popSize = 150, toMate = 50, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 99.907236% 
+Test f1: 99.917150% 
+Time Elapsed: 21.399 s 
+
+popSize = 150, toMate = 50, toMutate = 100
+Average Validation f1: 98.305085% 
+Training f1: 98.970037% 
+Test f1: 98.912134% 
+Time Elapsed: 22.946 s 
+
+popSize = 150, toMate = 75, toMutate = 0
+Average Validation f1: 99.159664% 
+Training f1: 99.534451% 
+Test f1: 99.500832% 
+Time Elapsed: 17.796 s 
+
+popSize = 150, toMate = 75, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 23.422 s 
+
+popSize = 150, toMate = 75, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 23.118 s 
+
+popSize = 150, toMate = 75, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 25.329 s 
+
+popSize = 150, toMate = 75, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 27.175 s 
+
+popSize = 150, toMate = 100, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 23.935 s 
+
+popSize = 150, toMate = 100, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 25.346 s 
+
+popSize = 150, toMate = 100, toMutate = 50
+Average Validation f1: 96.995708% 
+Training f1: 97.676624% 
+Test f1: 97.627119% 
+Time Elapsed: 26.800 s 
+
+popSize = 150, toMate = 100, toMutate = 75
+Average Validation f1: 99.159664% 
+Training f1: 99.627907% 
+Test f1: 99.584372% 
+Time Elapsed: 29.956 s 
+
+popSize = 150, toMate = 100, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 32.090 s 
+
+popSize = 200, toMate = 0, toMutate = 0
+Average Validation f1: 99.581590% 
+Training f1: 99.860789% 
+Test f1: 99.834163% 
+Time Elapsed: 2.238 s 
+
+popSize = 200, toMate = 0, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 7.321 s 
+
+popSize = 200, toMate = 0, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 12.252 s 
+
+popSize = 200, toMate = 0, toMutate = 75
+Average Validation f1: 99.581590% 
+Training f1: 98.015123% 
+Test f1: 98.187948% 
+Time Elapsed: 16.317 s 
+
+popSize = 200, toMate = 0, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 99.907236% 
+Test f1: 99.917150% 
+Time Elapsed: 19.242 s 
+
+popSize = 200, toMate = 25, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 7.609 s 
+
+popSize = 200, toMate = 25, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 12.236 s 
+
+popSize = 200, toMate = 25, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 16.070 s 
+
+popSize = 200, toMate = 25, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 99.440820% 
+Test f1: 99.500832% 
+Time Elapsed: 19.738 s 
+
+popSize = 200, toMate = 25, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 22.311 s 
+
+popSize = 200, toMate = 50, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 12.866 s 
+
+popSize = 200, toMate = 50, toMutate = 25
+Average Validation f1: 96.995708% 
+Training f1: 95.395056% 
+Test f1: 95.501730% 
+Time Elapsed: 16.677 s 
+
+popSize = 200, toMate = 50, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 20.192 s 
+
+popSize = 200, toMate = 50, toMutate = 75
+Average Validation f1: 98.734177% 
+Training f1: 99.111734% 
+Test f1: 99.081036% 
+Time Elapsed: 23.052 s 
+
+popSize = 200, toMate = 50, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 25.427 s 
+
+popSize = 200, toMate = 75, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 21.871 s 
+
+popSize = 200, toMate = 75, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 22.289 s 
+
+popSize = 200, toMate = 75, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 25.408 s 
+
+popSize = 200, toMate = 75, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 26.746 s 
+
+popSize = 200, toMate = 75, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 30.677 s 
+
+popSize = 200, toMate = 100, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 25.035 s 
+
+popSize = 200, toMate = 100, toMutate = 25
+Average Validation f1: 99.581590% 
+Training f1: 99.253035% 
+Test f1: 99.291371% 
+Time Elapsed: 27.157 s 
+
+popSize = 200, toMate = 100, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 29.697 s 
+
+popSize = 200, toMate = 100, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 32.175 s 
+
+popSize = 200, toMate = 100, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 32.297 s 
+
+popSize = 400, toMate = 0, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 4.712 s 
+
+popSize = 400, toMate = 0, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 9.824 s 
+
+popSize = 400, toMate = 0, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 14.500 s 
+
+popSize = 400, toMate = 0, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 19.060 s 
+
+popSize = 400, toMate = 0, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 23.361 s 
+
+popSize = 400, toMate = 25, toMutate = 0
+Average Validation f1: 99.159664% 
+Training f1: 98.875351% 
+Test f1: 98.912134% 
+Time Elapsed: 9.762 s 
+
+popSize = 400, toMate = 25, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 99.393939% 
+Test f1: 99.459010% 
+Time Elapsed: 14.939 s 
+
+popSize = 400, toMate = 25, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 19.220 s 
+
+popSize = 400, toMate = 25, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 23.830 s 
+
+popSize = 400, toMate = 25, toMutate = 100
+Average Validation f1: 96.995708% 
+Training f1: 95.445736% 
+Test f1: 95.637149% 
+Time Elapsed: 27.674 s 
+
+popSize = 400, toMate = 50, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 15.087 s 
+
+popSize = 400, toMate = 50, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 19.970 s 
+
+popSize = 400, toMate = 50, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 24.139 s 
+
+popSize = 400, toMate = 50, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 28.630 s 
+
+popSize = 400, toMate = 50, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 32.023 s 
+
+popSize = 400, toMate = 75, toMutate = 0
+Average Validation f1: 95.652174% 
+Training f1: 95.899662% 
+Test f1: 95.906937% 
+Time Elapsed: 20.533 s 
+
+popSize = 400, toMate = 75, toMutate = 25
+Average Validation f1: 99.581590% 
+Training f1: 98.590226% 
+Test f1: 98.700210% 
+Time Elapsed: 24.914 s 
+
+popSize = 400, toMate = 75, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 28.765 s 
+
+popSize = 400, toMate = 75, toMutate = 75
+Average Validation f1: 96.551724% 
+Training f1: 96.647510% 
+Test f1: 96.663815% 
+Time Elapsed: 32.747 s 
+
+popSize = 400, toMate = 75, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 36.163 s 
+
+popSize = 400, toMate = 100, toMutate = 0
+Average Validation f1: 99.581590% 
+Training f1: 99.581201% 
+Test f1: 99.584372% 
+Time Elapsed: 26.111 s 
+
+popSize = 400, toMate = 100, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 30.244 s 
+
+popSize = 400, toMate = 100, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 33.861 s 
+
+popSize = 400, toMate = 100, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 36.840 s 
+
+popSize = 400, toMate = 100, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 40.101 s 
+
+popSize = 500, toMate = 0, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 99.860789% 
+Test f1: 99.875673% 
+Time Elapsed: 5.464 s 
+
+popSize = 500, toMate = 0, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 99.721190% 
+Test f1: 99.751037% 
+Time Elapsed: 10.619 s 
+
+popSize = 500, toMate = 0, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 99.205979% 
+Test f1: 99.291371% 
+Time Elapsed: 15.917 s 
+
+popSize = 500, toMate = 0, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 20.617 s 
+
+popSize = 500, toMate = 0, toMutate = 100
+Average Validation f1: 96.551724% 
+Training f1: 96.845124% 
+Test f1: 96.840307% 
+Time Elapsed: 25.238 s 
+
+popSize = 500, toMate = 25, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 11.010 s 
+
+popSize = 500, toMate = 25, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 15.842 s 
+
+popSize = 500, toMate = 25, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 99.300047% 
+Test f1: 99.375260% 
+Time Elapsed: 23.563 s 
+
+popSize = 500, toMate = 25, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 25.146 s 
+
+popSize = 500, toMate = 25, toMutate = 100
+Average Validation f1: 93.805310% 
+Training f1: 94.267516% 
+Test f1: 94.266958% 
+Time Elapsed: 29.113 s 
+
+popSize = 500, toMate = 50, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 16.188 s 
+
+popSize = 500, toMate = 50, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 20.866 s 
+
+popSize = 500, toMate = 50, toMutate = 50
+Average Validation f1: 99.581590% 
+Training f1: 99.721190% 
+Test f1: 99.709423% 
+Time Elapsed: 25.540 s 
+
+popSize = 500, toMate = 50, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 99.814299% 
+Test f1: 99.834163% 
+Time Elapsed: 29.534 s 
+
+popSize = 500, toMate = 50, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 34.632 s 
+
+popSize = 500, toMate = 75, toMutate = 0
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 21.829 s 
+
+popSize = 500, toMate = 75, toMutate = 25
+Average Validation f1: 98.734177% 
+Training f1: 99.440820% 
+Test f1: 99.375260% 
+Time Elapsed: 26.174 s 
+
+popSize = 500, toMate = 75, toMutate = 50
+Average Validation f1: 98.734177% 
+Training f1: 97.773567% 
+Test f1: 97.886729% 
+Time Elapsed: 30.344 s 
+
+popSize = 500, toMate = 75, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 34.446 s 
+
+popSize = 500, toMate = 75, toMutate = 100
+Average Validation f1: 98.305085% 
+Training f1: 98.303487% 
+Test f1: 98.316498% 
+Time Elapsed: 38.360 s 
+
+popSize = 500, toMate = 100, toMutate = 0
+Average Validation f1: 98.734177% 
+Training f1: 97.189138% 
+Test f1: 97.366185% 
+Time Elapsed: 27.302 s 
+
+popSize = 500, toMate = 100, toMutate = 25
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 31.403 s 
+
+popSize = 500, toMate = 100, toMutate = 50
+Average Validation f1: 100.000000% 
+Training f1: 99.721190% 
+Test f1: 99.751037% 
+Time Elapsed: 35.598 s 
+
+popSize = 500, toMate = 100, toMutate = 75
+Average Validation f1: 100.000000% 
+Training f1: 99.953639% 
+Test f1: 99.958592% 
+Time Elapsed: 39.002 s 
+
+popSize = 500, toMate = 100, toMutate = 100
+Average Validation f1: 100.000000% 
+Training f1: 100.000000% 
+Test f1: 100.000000% 
+Time Elapsed: 43.077 s 
+
+

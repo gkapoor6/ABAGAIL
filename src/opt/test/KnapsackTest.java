@@ -1,6 +1,12 @@
 package opt.test;
 
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import dist.DiscreteDependencyTree;
@@ -52,54 +58,134 @@ public class KnapsackTest {
     /** The maximum weight for the knapsack */
     private static final double MAX_KNAPSACK_WEIGHT =
          MAX_WEIGHT * NUM_ITEMS * COPIES_EACH * .4;
+    
+    public static int maxN = 200;
+    public static int maxIterations = 1500;
+    private static List<String> lines = new ArrayList<>();
+    private static List<String> lines1 = new ArrayList<>();
 
     /**
      * The test main
      * @param args ignored
      */
     public static void main(String[] args) {
-        int[] copies = new int[NUM_ITEMS];
-        Arrays.fill(copies, COPIES_EACH);
-        double[] values = new double[NUM_ITEMS];
-        double[] weights = new double[NUM_ITEMS];
-        for (int i = 0; i < NUM_ITEMS; i++) {
-            values[i] = random.nextDouble() * MAX_VALUE;
-            weights[i] = random.nextDouble() * MAX_WEIGHT;
+    	
+    	for(int l = 0; l < maxIterations; l += 300) {
+    		
+            int[] copies = new int[NUM_ITEMS];
+            Arrays.fill(copies, COPIES_EACH);
+            double[] values = new double[NUM_ITEMS];
+            double[] weights = new double[NUM_ITEMS];
+            for (int i = 0; i < NUM_ITEMS; i++) {
+                values[i] = random.nextDouble() * MAX_VALUE;
+                weights[i] = random.nextDouble() * MAX_WEIGHT;
+            }
+            int[] ranges = new int[NUM_ITEMS];
+            Arrays.fill(ranges, COPIES_EACH + 1);
+            System.out.println("#Iterations = " + l);
+            EvaluationFunction ef = new KnapsackEvaluationFunction(values, weights, MAX_KNAPSACK_WEIGHT, copies);
+            Distribution odd = new DiscreteUniformDistribution(ranges);
+            NeighborFunction nf = new DiscreteChangeOneNeighbor(ranges);
+
+            MutationFunction mf = new DiscreteChangeOneMutation(ranges);
+            CrossoverFunction cf = new UniformCrossOver();
+            Distribution df = new DiscreteDependencyTree(.1, ranges);
+
+            HillClimbingProblem hcp = new GenericHillClimbingProblem(ef, odd, nf);
+            GeneticAlgorithmProblem gap = new GenericGeneticAlgorithmProblem(ef, odd, mf, cf);
+            ProbabilisticOptimizationProblem pop = new GenericProbabilisticOptimizationProblem(ef, odd, df);
+            
+            RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);      
+            FixedIterationTrainer fit = new FixedIterationTrainer(rhc, l);
+            fit.train();
+            System.out.println(ef.value(rhc.getOptimal()));
+            
+            SimulatedAnnealing sa = new SimulatedAnnealing(100, .95, hcp);
+            fit = new FixedIterationTrainer(sa, l);
+            fit.train();
+            System.out.println(ef.value(sa.getOptimal()));
+            
+            StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 150, 25, gap);
+            fit = new FixedIterationTrainer(ga, l);
+            fit.train();
+            System.out.println(ef.value(ga.getOptimal()));
+            
+            MIMIC mimic = new MIMIC(200, 100, pop);
+            fit = new FixedIterationTrainer(mimic, l);
+            fit.train();
+            System.out.println(ef.value(mimic.getOptimal()));
+            
+            lines.add(l + ", " + ef.value(rhc.getOptimal()) + ", " + ef.value(sa.getOptimal()) +
+            		", " + ef.value(ga.getOptimal()) + ", " + ef.value(mimic.getOptimal()));
+    	}
+    	
+        try {
+        	// won't work on any other machine - change path!!!
+        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\ks1.csv");
+            Files.write(file, lines, Charset.forName("UTF-8"));
+            
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        int[] ranges = new int[NUM_ITEMS];
-        Arrays.fill(ranges, COPIES_EACH + 1);
+        
+        for(int m = 50; m < maxN; m += 30) {
+        	
+            int[] copies = new int[m];
+            Arrays.fill(copies, COPIES_EACH);
+            double[] values = new double[m];
+            double[] weights = new double[m];
+            for (int i = 0; i < m; i++) {
+                values[i] = random.nextDouble() * MAX_VALUE;
+                weights[i] = random.nextDouble() * MAX_WEIGHT;
+            }
+            int[] ranges = new int[m];
+            Arrays.fill(ranges, COPIES_EACH + 1);
 
-        EvaluationFunction ef = new KnapsackEvaluationFunction(values, weights, MAX_KNAPSACK_WEIGHT, copies);
-        Distribution odd = new DiscreteUniformDistribution(ranges);
-        NeighborFunction nf = new DiscreteChangeOneNeighbor(ranges);
+            EvaluationFunction ef = new KnapsackEvaluationFunction(values, weights, MAX_KNAPSACK_WEIGHT, copies);
+            Distribution odd = new DiscreteUniformDistribution(ranges);
+            NeighborFunction nf = new DiscreteChangeOneNeighbor(ranges);
 
-        MutationFunction mf = new DiscreteChangeOneMutation(ranges);
-        CrossoverFunction cf = new UniformCrossOver();
-        Distribution df = new DiscreteDependencyTree(.1, ranges);
+            MutationFunction mf = new DiscreteChangeOneMutation(ranges);
+            CrossoverFunction cf = new UniformCrossOver();
+            Distribution df = new DiscreteDependencyTree(.1, ranges);
 
-        HillClimbingProblem hcp = new GenericHillClimbingProblem(ef, odd, nf);
-        GeneticAlgorithmProblem gap = new GenericGeneticAlgorithmProblem(ef, odd, mf, cf);
-        ProbabilisticOptimizationProblem pop = new GenericProbabilisticOptimizationProblem(ef, odd, df);
+            HillClimbingProblem hcp = new GenericHillClimbingProblem(ef, odd, nf);
+            GeneticAlgorithmProblem gap = new GenericGeneticAlgorithmProblem(ef, odd, mf, cf);
+            ProbabilisticOptimizationProblem pop = new GenericProbabilisticOptimizationProblem(ef, odd, df);
+            System.out.println("N = " + m);
+            RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);      
+            FixedIterationTrainer fit = new FixedIterationTrainer(rhc, 20000);
+            fit.train();
+            System.out.println(ef.value(rhc.getOptimal()));
+            
+            SimulatedAnnealing sa = new SimulatedAnnealing(100, .95, hcp);
+            fit = new FixedIterationTrainer(sa, 20000);
+            fit.train();
+            System.out.println(ef.value(sa.getOptimal()));
+            
+            StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(20, 15, 25, gap);
+            fit = new FixedIterationTrainer(ga, 1000);
+            fit.train();
+            System.out.println(ef.value(ga.getOptimal()));
+            
+            MIMIC mimic = new MIMIC(20, 10, pop);
+            fit = new FixedIterationTrainer(mimic, 1000);
+            fit.train();
+            System.out.println(ef.value(mimic.getOptimal()));
+            
+            lines.add(m + ", " + ef.value(rhc.getOptimal()) + ", " + ef.value(sa.getOptimal()) +
+            		", " + ef.value(ga.getOptimal()) + ", " + ef.value(mimic.getOptimal()));
+        }
         
-        RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);      
-        FixedIterationTrainer fit = new FixedIterationTrainer(rhc, 200000);
-        fit.train();
-        System.out.println(ef.value(rhc.getOptimal()));
-        
-        SimulatedAnnealing sa = new SimulatedAnnealing(100, .95, hcp);
-        fit = new FixedIterationTrainer(sa, 200000);
-        fit.train();
-        System.out.println(ef.value(sa.getOptimal()));
-        
-        StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 150, 25, gap);
-        fit = new FixedIterationTrainer(ga, 1000);
-        fit.train();
-        System.out.println(ef.value(ga.getOptimal()));
-        
-        MIMIC mimic = new MIMIC(200, 100, pop);
-        fit = new FixedIterationTrainer(mimic, 1000);
-        fit.train();
-        System.out.println(ef.value(mimic.getOptimal()));
+        try {
+        	// won't work on any other machine - change path!!!
+        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\ks2.csv");
+            Files.write(file, lines1, Charset.forName("UTF-8"));
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }
