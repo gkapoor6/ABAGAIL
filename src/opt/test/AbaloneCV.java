@@ -29,7 +29,7 @@ import java.util.*;
  */
 public class AbaloneCV {
     private static Instance[] instances = initializeInstances();
-
+    private static List<String> lines = new ArrayList<>();
     private static int inputLayer = 7, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
     private static BackPropagationNetworkFactory factory = new BackPropagationNetworkFactory();
     

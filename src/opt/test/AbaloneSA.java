@@ -16,6 +16,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -29,7 +33,7 @@ import java.util.*;
  */
 public class AbaloneSA {
     private static Instance[] instances = initializeInstances();
-
+    private static List<String> lines = new ArrayList<>();
     private static int inputLayer = 7, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
     private static BackPropagationNetworkFactory factory = new BackPropagationNetworkFactory();
     
@@ -46,7 +50,7 @@ public class AbaloneSA {
     private static NeuralNetworkOptimizationProblem[] nnop = new NeuralNetworkOptimizationProblem[1];
 
     private static OptimizationAlgorithm[] oa = new OptimizationAlgorithm[1];
-    private static String[] oaNames = {"GA"};
+    private static String[] oaNames = {"SA"};
     private static String results = "";
 
     private static DecimalFormat df = new DecimalFormat("0.000");
@@ -95,15 +99,22 @@ public class AbaloneSA {
             end = System.nanoTime();
             testingTime = end - start;
             testingTime /= Math.pow(10,9);
-
-            results +=  "\nResults for " + oaNames[i] + "\nPercent correctly classified: "
-                        + df.format(correct/(correct+incorrect)*100) + "%\nTraining time: " + df.format(trainingTime)
-                        + " seconds\nTesting time: " + df.format(testingTime) + " seconds\n";
+            
+            lines.add(trainingIterations + ", " + 
+        			df.format(correct/(correct+incorrect)*100) + ", " + df.format(trainingTime) + ", " + df.format(testingTime)); 
+            
+            System.out.print(oaNames[0] + "iterations = "+ trainingIterations + "\n");
         }
         
-        System.out.print("Training Iterations = " + trainingIterations);
-        System.out.print("\nt = " + t + ", cooling = " + cooling + "\n");
-        System.out.println(results);
+        try {
+        	// won't work on any other machine - change path!!!
+        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\asa.csv");
+            Files.write(file, lines, Charset.forName("UTF-8"));
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }
 
     private static void train(OptimizationAlgorithm oa, BackPropagationNetwork network, String oaName) {

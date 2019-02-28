@@ -31,7 +31,7 @@ import java.util.*;
  * @author Hannah Lau
  * @version 1.0
  */
-public class AbaloneGA {
+public class AbaloneRHC {
     private static Instance[] instances = initializeInstances();
     private static List<String> lines = new ArrayList<>();
     private static int inputLayer = 7, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
@@ -50,19 +50,19 @@ public class AbaloneGA {
     private static NeuralNetworkOptimizationProblem[] nnop = new NeuralNetworkOptimizationProblem[1];
 
     private static OptimizationAlgorithm[] oa = new OptimizationAlgorithm[1];
-    private static String[] oaNames = {"GA"};
+    private static String[] oaNames = {"RHC"};
     private static String results = "";
 
     private static DecimalFormat df = new DecimalFormat("0.000");
     
-	  public AbaloneGA(int trainingIterations, double t, double cooling, int popSize, int toMate, int toMutate) {
+	  public AbaloneRHC(int trainingIterations, double t, double cooling, int popSize, int toMate, int toMutate) {
 	    	
-		  AbaloneGA.trainingIterations = trainingIterations;
-		  AbaloneGA.t = t;
-		  AbaloneGA.cooling = cooling;
-		  AbaloneGA.popSize = popSize;
-		  AbaloneGA.toMate = toMate;
-		  AbaloneGA.toMutate = toMutate;
+		  AbaloneRHC.trainingIterations = trainingIterations;
+		  AbaloneRHC.t = t;
+		  AbaloneRHC.cooling = cooling;
+		  AbaloneRHC.popSize = popSize;
+		  AbaloneRHC.toMate = toMate;
+		  AbaloneRHC.toMutate = toMutate;
 	  }
 
     public void run() {
@@ -72,7 +72,7 @@ public class AbaloneGA {
             nnop[i] = new NeuralNetworkOptimizationProblem(set, networks[i], measure);
         }
 
-        oa[0] = new StandardGeneticAlgorithm(AbaloneGA.popSize, AbaloneGA.toMate, AbaloneGA.toMutate, nnop[0]);
+        oa[0] = new RandomizedHillClimbing(nnop[0]);
 
         for(int i = 0; i < oa.length; i++) {
             double start = System.nanoTime(), end, trainingTime, testingTime, correct = 0, incorrect = 0;
@@ -101,16 +101,14 @@ public class AbaloneGA {
             testingTime /= Math.pow(10,9);
             
             lines.add(trainingIterations + ", " + 
-        			df.format(correct/(correct+incorrect)*100) + ", " + df.format(trainingTime) + ", " + df.format(testingTime)); 
+            			df.format(correct/(correct+incorrect)*100) + ", " + df.format(trainingTime) + ", " + df.format(testingTime)); 
             
-
             System.out.print(oaNames[0] + "iterations = "+ trainingIterations + "\n");
-            
         }
         
         try {
         	// won't work on any other machine - change path!!!
-        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\aga.csv");
+        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\arhc.csv");
             Files.write(file, lines, Charset.forName("UTF-8"));
             
         } catch (Exception e) {
@@ -172,4 +170,5 @@ public class AbaloneGA {
         return instances;
     }
 }
+
 
