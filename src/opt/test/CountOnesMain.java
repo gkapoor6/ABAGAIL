@@ -45,7 +45,7 @@ public class CountOnesMain {
     /** The n value */
     public static int maxN = 1000;
     public static int N = 80;
-    public static int maxIterations = 200;
+    public static int maxIterations = 2000;
     private static List<String> lines = new ArrayList<>();
     private static List<String> lines1 = new ArrayList<>();
     /**
@@ -54,7 +54,7 @@ public class CountOnesMain {
      */
     public static void main(String[] args) {
        
-        for(int l = 0; l < maxIterations; l += 300) {
+        for(int l = 20; l < maxIterations; l += 300) {
         	
             int[] ranges = new int[N];
             Arrays.fill(ranges, 2);
@@ -85,7 +85,7 @@ public class CountOnesMain {
             fit.train();
             System.out.println(ef.value(ga.getOptimal()));
             
-            MIMIC mimic = new MIMIC(50, 10, pop);
+            MIMIC mimic = new MIMIC(80, 40, pop);
             fit = new FixedIterationTrainer(mimic, l);
             fit.train();
             System.out.println(ef.value(mimic.getOptimal()));
@@ -140,7 +140,7 @@ public class CountOnesMain {
             fit.train();
             System.out.println(ef.value(mimic.getOptimal()));
             
-            lines.add(m + ", " + ef.value(rhc.getOptimal()) + ", " + ef.value(sa.getOptimal()) +
+            lines1.add(m + ", " + ef.value(rhc.getOptimal()) + ", " + ef.value(sa.getOptimal()) +
             		", " + ef.value(ga.getOptimal()) + ", " + ef.value(mimic.getOptimal()));
          
         }

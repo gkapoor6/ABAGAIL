@@ -173,7 +173,7 @@ public class KnapsackTest {
             fit.train();
             System.out.println(ef.value(mimic.getOptimal()));
             
-            lines.add(m + ", " + ef.value(rhc.getOptimal()) + ", " + ef.value(sa.getOptimal()) +
+            lines1.add(m + ", " + ef.value(rhc.getOptimal()) + ", " + ef.value(sa.getOptimal()) +
             		", " + ef.value(ga.getOptimal()) + ", " + ef.value(mimic.getOptimal()));
         }
         

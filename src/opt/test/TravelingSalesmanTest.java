@@ -43,8 +43,8 @@ import shared.FixedIterationTrainer;
 public class TravelingSalesmanTest {
     /** The n value */
     public static int maxN = 200;
-    public static int N = 50;
-    public static int maxIterations = 1500;
+    public static int N = 80;
+    public static int maxIterations = 2000;
     private static List<String> lines = new ArrayList<>();
     private static List<String> lines1 = new ArrayList<>();
     
@@ -53,7 +53,8 @@ public class TravelingSalesmanTest {
      * @param args ignored
      */
     public static void main(String[] args) {
-    	/**  
+    	
+    	/**
         for(int l = 0; l < maxIterations; l += 300) {
             Random random = new Random();
             // create the random points
@@ -91,11 +92,11 @@ public class TravelingSalesmanTest {
             fit = new FixedIterationTrainer(sa, l);
             fit.train();
             
-            StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 150, 20, gap);
+            StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(80, 20, 10, gap);
             fit = new FixedIterationTrainer(ga, l);
             fit.train();
      
-            MIMIC mimic = new MIMIC(300, 100, pop);
+            MIMIC mimic = new MIMIC(80, 60, pop);
             fit = new FixedIterationTrainer(mimic, l);
             fit.train();
             
@@ -105,14 +106,17 @@ public class TravelingSalesmanTest {
         
         try {
         	// won't work on any other machine - change path!!!
-        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\tsp1.csv");
+        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\tsp_iterations.csv");
             Files.write(file, lines, Charset.forName("UTF-8"));
             
         } catch (Exception e) {
             e.printStackTrace();
         }
         */
-        for(int m = 20; m < maxN; m += 40) {
+        
+    	
+
+        for(int m = 20; m < maxN; m += 50) {
       	
         	// Using default iterations for all
             Random random = new Random();
@@ -165,7 +169,7 @@ public class TravelingSalesmanTest {
         }
         try {
         	// won't work on any other machine - change path!!!
-        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\tsp2.csv");
+        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\tsp_problemsize.csv");
             Files.write(file, lines1, Charset.forName("UTF-8"));
             
         } catch (Exception e) {
