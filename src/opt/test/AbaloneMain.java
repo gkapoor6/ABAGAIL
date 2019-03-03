@@ -9,7 +9,7 @@ public class AbaloneMain {
 //    	population must be greater than toMate, toMutate
 //    	Grid search
    	
-		/**
+
 	   	for (int i = 50; i < 150; i += 20) {
 	   		for (int j = 10; j < 51; j += 20) {
 	   			for (int k = 10; k < 51; k += 20) {
@@ -19,12 +19,12 @@ public class AbaloneMain {
 	   			}
 	   		}
 	   	}
-	   	*/
+
 	   	
 //    	Vary t, cooling with 500 iterations
 //    	Grid search
 	   	
-		/**
+
    		for (double j = 1e1; j < 1e15; j *= 1e2) {
    			for (double k = 0.1; k < 1; k += 0.3) {
    				// GA params won't be used 
@@ -32,13 +32,17 @@ public class AbaloneMain {
    				ag.run();
    			}
    		}
-   		*/
+
 
 	   	
 		// Vary iterations with optimal hyperparams
-		for (int k = 1000; k < 5000; k += 500) {
+		for (int k = 100; k < 5000; k += 500) {
 			AbaloneSA as = new AbaloneSA(k, 1E11, .95, 70,30,50);
 			as.run();
+			AbaloneGA ag = new AbaloneGA(k, 1E11, .95, 80, 30, 20);
+			ag.run();
+			AbaloneRHC ar = new AbaloneRHC(k, 1E11, .95, 80, 30, 20);
+			ar.run();
 		}
    	
 	}

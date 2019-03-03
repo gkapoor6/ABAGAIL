@@ -119,14 +119,14 @@ public class KnapsackTest {
             		", " + ef.value(ga.getOptimal()) + ", " + ef.value(mimic.getOptimal()));
     	}
     	
-        try {
-        	// won't work on any other machine - change path!!!
-        	Path file = Paths.get("C:\\Users\\Geetika\\Documents\\ks1.csv");
-            Files.write(file, lines, Charset.forName("UTF-8"));
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		try {
+			// won't work on any other machine - change path!!!
+			Path file = Paths.get("C:\\Users\\Geetika\\Documents\\ks1.csv");
+		    Files.write(file, lines, Charset.forName("UTF-8"));
+		    
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
         
         for(int m = 50; m < maxN; m += 30) {
         	

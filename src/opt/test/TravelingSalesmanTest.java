@@ -54,7 +54,7 @@ public class TravelingSalesmanTest {
      */
     public static void main(String[] args) {
     	
-    	/**
+
         for(int l = 0; l < maxIterations; l += 300) {
             Random random = new Random();
             // create the random points
@@ -112,7 +112,6 @@ public class TravelingSalesmanTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        */
         
     	
 
